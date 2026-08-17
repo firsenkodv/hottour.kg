@@ -38,7 +38,7 @@ return [
     |
     | Домены, недоступные из-под VPN (проверено 10.08.2026): cdn.jsdelivr.net,
     | tourvisor.ru, api-maps.yandex.ru, connect.facebook.net (грузится через
-    | GTM), analytics.tiktok.com (через GTM), adminway.ru.
+    | GTM), analytics.tiktok.com (через GTM).
     |
     */
 
@@ -66,7 +66,9 @@ return [
         // см. хелпер remote_image().
         'tourvisor_images' => env('EXTERNAL_TOURVISOR_IMAGES'),
 
-        // Гугл-переводчик и его зависимости (cdn.jsdelivr.net, adminway.ru).
+        // Гугл-переводчик (translate.google.com). Сама библиотека лежит
+        // локально в public/js/language/google-translate.js, снаружи
+        // подгружается только element.js.
         'translate' => env('EXTERNAL_TRANSLATE'),
 
         // Редактор TinyMCE с cdn.tiny.cloud. Домен из-под VPN доступен,

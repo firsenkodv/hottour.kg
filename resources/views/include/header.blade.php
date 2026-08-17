@@ -11,7 +11,7 @@
                 </div>
                 <div class="menu_social__social">
                     @include('include.icons.top_social')
-                    @include('include.translate.translate')
+                    <x-language.header-language-component/>
                 </div>
 
             </div><!--.header_top-->

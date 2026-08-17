@@ -1,11 +1,13 @@
 
-// cdn.jsdelivr.net и adminway.ru недоступны из-под VPN и висят до таймаута,
-// а скрипты загружаются строго по очереди (async = false) — без первого
-// не выполнится ни один. Флаг приходит из config/external.php.
+// Гугл-переводчик. Сама библиотека лежит локально
+// (public/js/language/google-translate.js) — раньше она тянулась с
+// adminway.ru, а тот домен недоступен из-под VPN и висел до таймаута.
+// Снаружи остаётся только element.js: он и вызывает колбэк TranslateInit,
+// поэтому порядок обязателен (async = false — скрипты выполняются по очереди).
+// Флаг приходит из config/external.php.
 if (!window.EXTERNAL || window.EXTERNAL.translate !== false) {
     for (const js of [
-        'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js',
-        'https://adminway.ru/files/google-translate.js',
+        '/js/language/google-translate.js',
         '//translate.google.com/translate_a/element.js?cb=TranslateInit',
     ]) {
         const script = document.body.appendChild(document.createElement('script'));

@@ -7,7 +7,7 @@
         </div>
         <div class="m_m_cont_top m_m_cont_top2">
         <span class="m_m_top_lang">
-            @include('include.translate.translate')
+            <x-language.header-language-component/>
         </span><!--.m_m_top_lang-->
         </div>
         <div class="fMenu tab_plane" data-mf="m_f3">

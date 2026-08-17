@@ -61,7 +61,7 @@
 @import "./pages/certificates/certificates.scss";
 @import "./components/modules/faq.scss";
 @import "./components/modules/desc-collapse.scss";
-@import "./translate/translate.css";
+@import "./components/language/header-language-component.scss";
 @import "./chosen/chosen.css";
 @import "./pagination.scss";
 @import "./social/social.scss";
