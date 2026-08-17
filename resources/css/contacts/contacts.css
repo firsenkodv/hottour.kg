@@ -1,0 +1,158 @@
+.catalogContacts .contactTabs .contactTabs__top {
+  height: 48px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 20px 0 0 0; }
+  .catalogContacts .contactTabs .contactTabs__top .contactTabs__tab {
+    padding: 0 1.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    color: #282828;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1em;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    transition: 0.2s;
+    cursor: pointer; }
+  .catalogContacts .contactTabs .contactTabs__top .contactTabs__tab.active,
+  .catalogContacts .contactTabs .contactTabs__top .contactTabs__tab:hover {
+    background: rgba(239, 83, 63, 0.08);
+    color: #EF533F; }
+  .catalogContacts .contactTabs .contactTabs__top .contactTabs__tab:first-child {
+    /*   padding: 0 1.5% 0 0;*/ }
+  .catalogContacts .contactTabs .contactTabs__top .contactTabs__tab:last-child {
+    /* padding: 0 0 0 1.5%;*/ }
+.catalogContacts .contactTabs .contactTabs__bottom {
+  padding: 24px 12px;
+  margin-bottom: 30px; }
+  .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab {
+    display: none; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__flex {
+      display: flex;
+      justify-content: space-between; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__left {
+      width: 30%;
+      padding: 16px 16px 16px 0; }
+      .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__left .contact_area__label {
+        padding: 0 0 16px; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__center {
+      width: 50%;
+      padding: 16px; }
+      .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__center .contact_area__label {
+        padding: 0 0 16px; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__right {
+      width: 20%;
+      padding: 16px 0 16px 16px; }
+      .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__right .contact_area__label {
+        padding: 0 0 16px; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__fsite_social {
+      min-width: 300px; }
+  .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab.active {
+    display: block;
+    width: 100%; }
+  .catalogContacts .contactTabs .contactTabs__bottom .property {
+    font-size: 24px;
+    line-height: 1.3em;
+    padding: 5px 0; }
+    .catalogContacts .contactTabs .contactTabs__bottom .property span {
+      color: #667085;
+      font-size: 15px; }
+.catalogContacts .contact_label {
+  color: green; }
+
+.JFormFieldMap_wrapper {
+  position: relative; }
+
+.JFormFieldMap {
+  border-top: 5px solid #EF533F; }
+  .JFormFieldMap h5 {
+    font-size: 22px;
+    color: #EF533F;
+    padding-bottom: 9px;
+    font-weight: 600; }
+  .JFormFieldMap .jt_ph {
+    padding-bottom: 5px;
+    font-size: 14px; }
+    .JFormFieldMap .jt_ph span {
+      color: #667085;
+      font-size: 12px; }
+  .JFormFieldMap .jt_ph__address {
+    padding: 10px 0;
+    font-size: 14px; }
+    .JFormFieldMap .jt_ph__address span {
+      color: #667085;
+      font-size: 12px; }
+
+@media (max-width: 1440px) {
+  .catalogContacts .contactTabs .contactTabs__bottom {
+    padding: 24px 12px;
+    margin-bottom: 30px; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__right {
+      width: 300px; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__fsite_social {
+      min-width: 300px; } }
+@media (max-width: 1310px) {
+  .catalogContacts .contactTabs .contactTabs__top {
+    height: auto;
+    flex-wrap: wrap; } }
+@media (max-width: 1024px) {
+  .catalogContacts .contactTabs .contactTabs__bottom {
+    padding: 24px 12px; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__right {
+      width: 300px; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__fsite_social {
+      min-width: 200px;
+      width: 217px; } }
+@media (max-width: 921px) {
+  #JFormFieldMap:after {
+    width: 29px;
+    height: 545px;
+    right: -8px;
+    top: 0;
+    position: absolute;
+    content: "";
+    display: block;
+    background: #f7f7f7;
+    z-index: 100; } }
+@media (max-width: 868px) {
+  .catalogContacts .contactTabs .contactTabs__top {
+    height: auto;
+    min-height: 48px;
+    flex-wrap: wrap; }
+    .catalogContacts .contactTabs .contactTabs__top .contactTabs__tab {
+      padding: 0 10px; }
+  .catalogContacts .contactTabs .contactTabs__bottom {
+    padding: 24px 12px 0 12px;
+    margin-bottom: 0; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__flex {
+      display: block; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__left {
+      padding: 10px 0;
+      width: 100%; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__center {
+      padding: 10px 0;
+      width: 100%; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__right {
+      width: 100%;
+      padding: 10px 0; }
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__fsite_social {
+      min-width: 200px;
+      width: 217px; }
+  .catalogContacts .social__flex {
+    width: 100%; } }
+@media (max-width: 468px) {
+  .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__center .contact_area__label {
+    padding: 16px 0 10px 0 !important; }
+
+  .catalogContacts .contact_area__fsite_social {
+    width: 100% !important;
+    min-width: 1px !important;
+    max-width: 100% !important; }
+  .catalogContacts .social__flex {
+    width: 100% !important; } }
+
+/*# sourceMappingURL=contacts.css.map */

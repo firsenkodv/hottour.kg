@@ -1,0 +1,80 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #FD5362;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #29ABE2;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+.dashboardBox__a_user {
+    .dashboardBox__col {
+        display: flex;
+        align-items: center;
+    }
+    .dashboardBox__left {
+        width: 30%;
+    }
+    .dashboardBox__right {
+        width: 70%;
+    }
+
+}
+
+.d_llabel {
+font-weight: 600;
+    font-size: 18px;
+}
+.d_ltext {
+font-size: 18px;
+}
+
+.dashboardBox__a_user__workers {
+    padding: 26px 0 19px 0;
+    display: flex;
+    flex-wrap: wrap;
+    .dashboardBox {
+        width: 32%;
+        margin: 0 16px 16px 0;
+    }
+    .dashboardBox:nth-child(3n) {
+        width: 31%;
+        margin: 0 0 16px 0;
+    }
+    .dashboardBox__a_user__worker {
+
+    }
+}
+
+
+.cli_hot_user_Flex {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    .cli_hot_user_left {
+        width: 136px;
+        min-width: 136px;
+    }
+    .cli_hot_user_right {
+    width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        min-height: 100px;
+    }
+    .hot_user_username {
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .hot_user_email {
+        color:$colorGrey
+    }
+}

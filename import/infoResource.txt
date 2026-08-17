@@ -1,0 +1,147 @@
+
+    /**
+     * @return //array, выводим teaser
+     */
+
+    public function indexFields(): array
+    {
+        return [
+            ID::make()
+                ->sortable(),
+
+            Image::make(__('Изображение'), 'img')
+                ->showOnExport()
+                ->disk(config('moonshine.disk', 'moonshine'))
+                ->dir('category')
+                ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg']),
+
+            Text::make(__('Заголовок'), 'title')
+                ->required(),
+            Slug::make(__('Алиас'), 'slug')
+                ->from('title')
+                ->hint('url адрес, обязательное поле')
+                ->unique(),
+            Date::make(__('Дата создания'), 'created_at')
+                ->format("d.m.Y")
+                ->default(now()->toDateTimeString())
+                ->sortable()
+                ->hideOnForm(),
+            Switcher::make('Публикация', 'published')->updateOnPreview(),
+            Switcher::make('Desc', 'description'),
+            Switcher::make('Key', 'keywords'),
+            Number::make('Сорт.', 'sorting')->sortable()
+
+
+        ];
+    }
+
+    /**
+     * @return //array, выводим full
+     */
+    public function formFields(): array
+    {
+        return [
+            Block::make([
+                Tabs::make([
+
+                    Tab::make(__('Общие настройки'), [
+                        Grid::make([
+                            Column::make([
+
+
+                                Collapse::make('Заголовок/Алиас', [
+                                    Text::make('Заголовок', 'title')->required(),
+                                    Slug::make('Алиас', 'slug')
+                                        ->from('title')->unique()
+                                ]),
+
+
+                                Text::make(__('Подзаголовок'), 'subtitle'),
+                                Image::make(__('Изображение'), 'img')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('resort')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable(),
+
+                                Column::make([
+                                    TinyMce::make('Краткое описание', 'smalltext')
+                                ])
+
+
+                            ])
+                                ->columnSpan(6),
+                            Column::make([
+
+                                Collapse::make('Метотеги', [
+                                    Text::make('Мета тэг (title) ', 'metatitle'),
+                                    Text::make('Мета тэг (description) ', 'description'),
+                                    Text::make('Мета тэг (keywords) ', 'keywords'),
+                                    Switcher::make('Публикация', 'published')->default(1),
+
+                                ]),
+                                Collapse::make('Вложенность', [
+                                    BelongsTo::make('Категория', 'parent', resource: new HotCategoryResource())->nullable()->searchable(),
+                                    Number::make('Сортировка','sorting')->buttons()->default(0)
+
+                                ]),
+
+
+                            ])
+                                ->columnSpan(6)
+
+                        ]),
+                        Divider::make(),
+
+                        Column::make([
+                            TinyMce::make('Описание', 'text')
+                        ])
+                            ->columnSpan(12),
+                        Divider::make('Дополнительное изображение на страницу'),
+
+                        Image::make(__('Изображение'), 'pageimg1')
+                            ->showOnExport()
+                            ->disk(config('moonshine.disk', 'moonshine'))
+                            ->dir('resort')
+                            ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                            ->removable()
+                            ->hint('Растягивается на 100% ширины'),
+
+                        Divider::make(),
+
+                        Column::make([
+                            TinyMce::make('Дополнительное описание', 'text2')
+                        ])
+                            ->columnSpan(12),
+
+                        Image::make(__('Изображение'), 'pageimg2')
+                            ->showOnExport()
+                            ->disk(config('moonshine.disk', 'moonshine'))
+                            ->dir('resort')
+                            ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                            ->removable()
+                            ->hint('Растягивается на 100% ширины'),
+
+                        Divider::make(),
+
+                        Column::make([
+                            TinyMce::make('Дополнительное описание', 'text3')
+                        ])
+                            ->columnSpan(12),
+                    ]),
+
+
+                    Tab::make(__('Дополнительно'), [
+
+
+
+
+                    ]),
+                ]),
+
+
+            ]),
+        ];
+
+
+    }

@@ -1,0 +1,110 @@
+#MainCart {
+  padding-right: 15px !important;
+  padding-left: 15px !important; }
+
+.cart_left {
+  position: relative;
+  width: 60px;
+  z-index: 101; }
+  .cart_left .cart_left__myUrls {
+    width: 58px;
+    height: 58px;
+    position: fixed;
+    left: 15px;
+    bottom: 101px;
+    min-height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #10A9FF;
+    font-size: 0; }
+    .cart_left .cart_left__myUrls a {
+      display: block;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background-position: center;
+      background-size: 62%;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMTIgM1Y0TTEyIDIwVjIxTTQgMTJIM002LjMxNDEyIDYuMzE0MTJMNS41IDUuNU0xNy42ODU5IDYuMzE0MTJMMTguNSA1LjVNNi4zMTQxMiAxNy42OUw1LjUgMTguNTAwMU0xNy42ODU5IDE3LjY5TDE4LjUgMTguNTAwMU0yMSAxMkgyME0xNiAxMkMxNiAxNC4yMDkxIDE0LjIwOTEgMTYgMTIgMTZDOS43OTA4NiAxNiA4IDE0LjIwOTEgOCAxMkM4IDkuNzkwODYgOS43OTA4NiA4IDEyIDhDMTQuMjA5MSA4IDE2IDkuNzkwODYgMTYgMTJaIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+DQo8L3N2Zz4="); }
+  .cart_left .submit_cart {
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    min-height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #4EBC5F;
+    font-size: 0;
+    border: none;
+    width: 58px;
+    height: 58px;
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNNy4yOTk4IDVIMjJMMjAgMTJIOC4zNzY3NU0yMSAxNkg5TDcgM0g0TTQgOEgyTTUgMTFIMk02IDE0SDJNMTAgMjBDMTAgMjAuNTUyMyA5LjU1MjI4IDIxIDkgMjFDOC40NDc3MiAyMSA4IDIwLjU1MjMgOCAyMEM4IDE5LjQ0NzcgOC40NDc3MiAxOSA5IDE5QzkuNTUyMjggMTkgMTAgMTkuNDQ3NyAxMCAyMFpNMjEgMjBDMjEgMjAuNTUyMyAyMC41NTIzIDIxIDIwIDIxQzE5LjQ0NzcgMjEgMTkgMjAuNTUyMyAxOSAyMEMxOSAxOS40NDc3IDE5LjQ0NzcgMTkgMjAgMTlDMjAuNTUyMyAxOSAyMSAxOS40NDc3IDIxIDIwWiIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPg0KPC9zdmc+"); }
+
+.u_orders .u_order {
+  border-bottom: 1px solid #dddddd;
+  padding: 12px; }
+  .u_orders .u_order .u_order__item {
+    display: flex;
+    padding: 10px; }
+  .u_orders .u_order .u_order__img {
+    width: 20%;
+    padding: 0 20px 0 0;
+    height: 100px;
+    min-width: 100px; }
+    .u_orders .u_order .u_order__img .u_order__imgSrc {
+      width: 100px;
+      height: 100px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 12px; }
+  .u_orders .u_order .u_order__title {
+    width: 80%; }
+    .u_orders .u_order .u_order__title .u___title {
+      padding: 10px 0 0 0;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.2em;
+      display: block; }
+  .u_orders .u_order .u___touts {
+    display: block;
+    padding: 8px 0 0 0;
+    color: #667085; }
+    .u_orders .u_order .u___touts b {
+      color: #000; }
+  .u_orders .u_order .u___url {
+    padding: 7px 0; }
+  .u_orders .u_order form.form {
+    position: relative; }
+    .u_orders .u_order form.form .delete_collection {
+      position: absolute;
+      right: 0;
+      top: 2px; }
+.u_orders .u_order:last-child {
+  border-bottom: 1px solid #fff; }
+
+.delete_collection {
+  background: #fff;
+  width: 21px;
+  height: 21px;
+  border-radius: 20px;
+  border: 1px solid #FD5362;
+  color: #FD5362;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  line-height: 0; }
+
+/*# sourceMappingURL=cart.css.map */

@@ -1,0 +1,75 @@
+.b_banner {
+    width: 100%;
+    height: 121px;
+}
+
+.b_nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.b_banner__800 {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+
+    width: 100%;
+    color: #fff;
+    height: 120px;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .b_banner__left {
+        width: 50%;
+    }
+
+    .b_banner__right {
+        width: 50%;
+        height: 100%;
+        display: flex;
+
+    }
+
+    .h2 {
+        font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.2em;
+        display: block;
+        padding-top: 10px;
+    }
+
+    .s_p {
+        display: block;
+    }
+}
+
+.b_banner__1000 {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+
+    .b_banner__right_flex {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        position: relative;
+
+        .b_banner__right_flex__left {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+    .b_banner__right_bottom {
+        min-width: 105px;
+    }
+}

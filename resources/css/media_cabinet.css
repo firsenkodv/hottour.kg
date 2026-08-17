@@ -1,0 +1,412 @@
+@charset "UTF-8";
+/* ── кабинет: фиксированное меню 920px + overflow-кнопка "ещё" ── */
+.hbox__submenu .v_s_c__flex {
+  max-width: 920px;
+  /* обрезаем только по горизонтали (пункты, не влезающие в 920px, до пересчёта JS),
+     чтобы при загрузке страницы не было видно широкого меню целиком.
+     overflow:hidden сюда ставить нельзя — обрежет выпадашку "ещё", у неё position:absolute
+     внутри этого же блока фиксированной высоты (84px, hotcategory/fullpage.scss). */
+  clip-path: inset(0 0 -100vh 0);
+}
+
+.hbox__submenu .v_s_c__flex .v_s_c__item {
+  flex-shrink: 0; /* пункты не сжимаются — иначе JS не видит переполнение */
+}
+
+.v_s_c__more {
+  display: none;
+  align-items: center;
+  height: 84px;
+  margin-left: auto;
+  position: relative;
+  flex-shrink: 0;
+  padding-left: 4px;
+}
+.v_s_c__more .v_s_c__item__admin a {
+  flex-direction: row;
+}
+
+.v_s_c__more-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background 0.2s;
+  padding: 0;
+}
+.v_s_c__more-btn:hover {
+  background: #f0f0f0;
+}
+.v_s_c__more-btn:hover svg circle {
+  fill: #EF533F;
+}
+.v_s_c__more-btn svg circle {
+  transition: fill 0.2s;
+}
+
+.v_s_c__more-dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% - 2px);
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
+  padding: 4px 0;
+  z-index: 200;
+  min-width: 180px;
+}
+.v_s_c__more-dropdown.open {
+  display: flex;
+}
+.v_s_c__more-dropdown .v_s_c__item {
+  margin: 0;
+}
+.v_s_c__more-dropdown .v_s_c__item a, .v_s_c__more-dropdown .v_s_c__item span {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #f0f0f0;
+  white-space: nowrap;
+  font-size: 15px;
+  padding: 0 16px;
+  text-decoration: none;
+  color: #282828;
+  transition: color 0.2s;
+}
+.v_s_c__more-dropdown .v_s_c__item a:hover, .v_s_c__more-dropdown .v_s_c__item span:hover {
+  color: #EF533F;
+}
+.v_s_c__more-dropdown .v_s_c__item a:before, .v_s_c__more-dropdown .v_s_c__item span:before {
+  display: none !important;
+}
+.v_s_c__more-dropdown .v_s_c__item:last-child a, .v_s_c__more-dropdown .v_s_c__item:last-child span {
+  border-bottom: none;
+}
+
+/* ── /кабинет: фиксированное меню ── */
+@media screen and (max-width: 1324px) {
+  .kab_flex {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media screen and (max-width: 1221px) {
+  .cabinet__flex .cabinet__left {
+    min-width: 360px;
+  }
+  .v_s_c__flex .v_s_c__item {
+    margin: 0 15px;
+  }
+  .v_s_c__flex .v_s_c__item:first-child {
+    margin: 0 15px 0 0;
+  }
+  .imp_box__sertificate {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+  }
+  .imp_box__sertificate .__sertificate {
+    width: 90%;
+    max-width: 90%;
+  }
+  .page_sertificate .survey__absolute {
+    position: relative;
+    width: 10%;
+    right: 0;
+  }
+  .page_sertificate .survey__absolute .surveyJs img {
+    position: relative;
+    top: 16px;
+    left: 16px;
+  }
+  .imp_box__sertificate .__sertificate {
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 1190px) {
+  .v_s_c__flex .v_s_c__item a {
+    font-size: 15px;
+  }
+  .v_s_c__flex .v_s_c__item .v_s_c__item:first-child {
+    margin: 0 7px 0 0;
+  }
+}
+@media screen and (max-width: 1168px) {
+  .kab_flex {
+    flex-direction: column-reverse;
+    padding-top: 40px !important;
+  }
+  .kab_right {
+    width: 100% !important;
+  }
+  .kab_left {
+    padding-right: 0 !important;
+    width: 100% !important;
+    padding-top: 50px !important;
+  }
+  .auth.block {
+    padding: 0 !important;
+  }
+}
+@media screen and (max-width: 1068px) {
+  .view_subcategories_countries__mobile {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #282828;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 101;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgNUgyMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMyAxMkgyMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMyAxOUgyMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
+  }
+  .view_subcategories_countries__mobile:hover {
+    background-color: #EF533F;
+  }
+  .v_s_c {
+    position: relative;
+    height: 62px;
+  }
+  .v_s_c .v_s_c__flex {
+    display: none;
+    padding: 24px;
+    background: #fff;
+    border-radius: 12px;
+    position: absolute;
+    z-index: 100;
+    height: auto;
+    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.08);
+  }
+  .v_s_c .v_s_c__flex .v_s_c__item {
+    margin: 0;
+  }
+  .v_s_c .v_s_c__flex .v_s_c__item a, .v_s_c .v_s_c__flex .v_s_c__item span {
+    height: 47px;
+    align-items: start;
+    border-bottom: 1px solid #ccc;
+  }
+  .v_s_c__flex .v_s_c__item.active span:before,
+  .v_s_c__flex .v_s_c__item.active a:before {
+    display: none;
+  }
+  .hbox__submenuBorder .v_s_c .v_s_c__flex {
+    height: auto !important;
+  }
+  .hbox__submenuBorder .v_s_c .v_s_c__flex a {
+    height: 47px !important;
+  }
+  .v_s_c__no .v_s_c__flex {
+    display: flex;
+    padding: 4px;
+    background: none;
+    border-radius: 0;
+    position: relative;
+    z-index: 100;
+    height: auto;
+    box-shadow: none;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .v_s_c__no .v_s_c__flex .v_s_c__item {
+    margin: 0;
+  }
+  .v_s_c__no .v_s_c__flex .v_s_c__item a, .v_s_c__no .v_s_c__flex .v_s_c__item span {
+    height: 47px;
+    align-items: start;
+    border: 0;
+    padding: 5px 20px 0 0;
+  }
+  .cabinet input[type=text].input, .cabinet input[type=email].input, .cabinet input[type=date].input, .cabinet input[type=number].input, .cabinet input[type=password].input {
+    font-size: 14px;
+  }
+  .cabinet .birthdate_wrap .birthdate {
+    font-size: 14px;
+  }
+  .cabinet .labelInput {
+    font-size: 14px;
+  }
+  .crm {
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+  }
+}
+@media screen and (max-width: 999px) {
+  .cabinet__flex {
+    flex-direction: column-reverse;
+    padding-top: 8px;
+  }
+  .cabinet__flex .cabinet__left {
+    padding-right: 0;
+    width: 100%;
+  }
+  .cabinet__flex .cabinet__right {
+    padding-right: 0;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+/* pocofon  x3 */
+@media (max-width: 793px) {
+  /*размер шрифтов*/
+  /*размер шрифтов*/
+  /* Переход на мобильную версию */
+  .cabinet {
+    padding-bottom: 50px;
+  }
+  .cabinet .kab_left .moduletable {
+    padding-bottom: 70px;
+  }
+  .cabinet .kab_left .bg_kab {
+    display: block;
+    height: auto !important;
+  }
+  .cabinet .kab_left .bg_kab .axeld_flex {
+    width: 100%;
+    padding: 16px 0 !important;
+  }
+  .cabinet .textnohtml_rel {
+    width: 100%;
+  }
+  .cabinet .textnohtml_rel i {
+    width: 100%;
+    max-width: 100% !important;
+    left: 0 !important;
+  }
+  .cabinet .t_item__center {
+    display: block;
+  }
+  .cabinet .t_item__center .t_item__center_right {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .cabinet .t_item__bottom {
+    padding: 16px 0 0 0;
+    display: block;
+  }
+  .cabinet .t_item__bottom .t_item__bottom_right {
+    padding: 10px 0;
+  }
+  .cabinet .imp_box__sertificate .__sertificate {
+    border-radius: 12px;
+    height: 287px;
+    max-width: 100%;
+    padding: 20px;
+    background-size: cover;
+    background-position: 0 0;
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+  }
+  .cabinet .survey__absolute .surveyMenuEdit {
+    top: 56px;
+    bottom: inherit !important;
+  }
+  .fLogin .textnohtml_rel {
+    width: 100%;
+  }
+  .fLogin .textnohtml_rel i {
+    width: 96%;
+    max-width: 96% !important;
+    left: 2% !important;
+    top: -70px;
+    margin: 0 auto;
+  }
+  /* Переход на мобильную версию */
+}
+/* pocofon  x3 */
+/* xiaomi pro6 */
+@media (max-width: 742px) {
+  .__sertificate .__s__flex {
+    display: block;
+  }
+  .__sertificate .__s__flex .__s__left {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  .__sertificate .__s__flex .__s__right {
+    width: 100%;
+  }
+  .dashboardBox__a_users .a_user__row {
+    position: relative;
+    border-radius: 0;
+  }
+  .dashboardBox__a_users .a_user__row .a_user__delete {
+    position: absolute;
+    right: -4px;
+    top: 10px;
+  }
+  .dashboardBox__a_users .a_user__row .a_user__delete .delete_user {
+    line-height: 1px;
+    min-width: 21px;
+  }
+  .dashboardBox__a_users .a_user__row .a_user__checkbox {
+    width: 35px;
+  }
+  .dashboardBox__a_users .a_user__name {
+    width: 86% !important;
+  }
+  .dashboardBox__a_users .a_user__email {
+    width: 100% !important;
+  }
+  .formCabinetInput_bunon .slotButtons .w_30 {
+    width: 30% !important;
+  }
+  .s_del {
+    display: none;
+  }
+}
+/* xiaomi pro6 */
+@media (max-width: 666px) {
+  .slotButtons .w_30 {
+    width: 100%;
+  }
+  .cabinet .c__flex {
+    display: block;
+  }
+  .cabinet .c__flex .c__flex_50_left {
+    width: 100%;
+  }
+  .cabinet .c__flex .c__flex_50_right {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+@media (max-width: 468px) {
+  /*размер шрифтов*/
+  /*размер шрифтов*/
+  /* Переход на мобильную версию */
+  .crm .t_dates .t_to span,
+  .crm .t_dates .t_from span {
+    font-size: 14px;
+  }
+  .crm .t_dog {
+    font-size: 14px;
+  }
+  .crm .t_pdficon a {
+    font-size: 14px;
+  }
+  .chose_filter {
+    display: block;
+  }
+  .chose_filter .chose_filter__user_fix {
+    margin: 0;
+  }
+  /* Переход на мобильную версию */
+}
+
+/*# sourceMappingURL=media_cabinet.css.map */

@@ -1,0 +1,123 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+.n_vid {
+
+    padding: 16px 0 0 0;
+
+    .n_vid__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 24px;
+
+        .n_vid__left {
+
+            .h2 {
+                font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 1.2em;
+
+            }
+
+        }
+
+        .n_vid__rihgt {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+
+
+        }
+    }
+
+    .n_vid__wrapper {
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+
+    }
+    .n_vid__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .n_vid_item {
+
+
+            max-width: 260px;
+            a {
+                text-decoration: none;
+                display: block;
+            }
+
+            img {
+                border-radius: 8px;
+            }
+
+            .n_vid_item__img {
+                border-radius: 8px;
+                position: relative;
+                top: 0;
+            }
+            .n_vid_item__title {
+                font-size: 18px;
+                font-weight: 600;
+                color: $color;
+                text-decoration: none;
+                padding: 8px 0  ;
+                max-height: 60px;
+                overflow: hidden;
+            }
+            .n_vid_item__desc {
+                font-size: 15px;
+                color: $colorGrey;
+                text-decoration: none;
+                max-height: 60px;
+                overflow: hidden;
+            }
+
+
+
+            .n_vid_item__link:hover {
+                position: relative;
+                display: block;
+                .n_vid_item__circle {
+                    span {
+                        border-left: 11px solid $colorBlue;
+
+                    }
+
+                }
+                .n_vid_item__title {
+                    color: $colorRed;
+                }
+            }
+
+
+        }
+
+    }
+
+}
+
+

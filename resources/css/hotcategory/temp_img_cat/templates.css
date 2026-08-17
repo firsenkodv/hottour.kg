@@ -1,0 +1,43 @@
+.hbox.temp_img_cat .hrow {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hbox.temp_img_cat .hrow .hcol {
+  width: 50%;
+  height: auto;
+}
+
+.pc_category2 {
+  position: relative;
+  width: 100%;
+}
+.pc_category2 a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.pc_category2 h1, .pc_category2 h2, .pc_category2 h3, .pc_category2 h4 {
+  position: relative;
+  z-index: 10;
+  padding: 10px 0;
+  font-size: 26px;
+  font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.pc_category2 .pc_category_img {
+  border-radius: 16px;
+}
+.pc_category2 .pc_category2__desc {
+  padding: 0 20px 33px 6px;
+}
+.pc_category2 .pc_category2__desc h2 {
+  padding-top: 16px;
+}
+
+.countries .hrow {
+  padding-top: 0;
+}
+
+/*# sourceMappingURL=templates.css.map */

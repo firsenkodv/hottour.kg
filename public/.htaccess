@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+  #  Redirect 301 /strany/chernogoriya/resort https://hottour.kz/strany/chernogoriya/kurorty-chernogorii
+  #  Redirect 301 /strany/chernogoriya/resort/budve https://hottour.kz/strany/chernogoriya/kurorty-chernogorii/budve
+  #  Redirect 301 /strany/chernogoriya/resort/bechichi https://hottour.kz/strany/chernogoriya/kurorty-chernogorii/bechichi
+  #  Redirect 301 /strany/chernogoriya/resort/herceg https://hottour.kz/strany/chernogoriya/kurorty-chernogorii/herceg
+
+</IfModule>

@@ -1,0 +1,185 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+.r_sw {
+
+    padding: 16px 0;
+
+    .r_sw__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 24px;
+
+        .r_sw__left {
+
+            .h2 {
+                font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 1.2em;
+
+            }
+
+        }
+
+        .r_sw__right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+            position: relative;
+
+            // ссылка «Посмотреть все N» — как на hottour.ru: обычная красная
+            // ссылка, на ≤668px слово «Посмотреть» скрывается («Все N»)
+            .r_sw__all {
+                a {
+                    white-space: nowrap;
+
+                    span {
+                        color: inherit;
+                    }
+                }
+
+                @media screen and (max-width: 668px) {
+                    .posm {
+                        display: none;
+                    }
+
+                    .vse {
+                        display: inline-block;
+
+                        &::first-letter {
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper_responce {
+
+        width: 100%;
+
+    }
+}
+
+.responce_item {
+
+    .responce_item__link {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        .responce_item__circle {
+            right: 20px;
+            top: 20px;
+            z-index: 10;
+        }
+        .responce_item__img {
+            border-radius: 8px;
+            position: relative;
+            top: 0;
+        }
+        .responce_item__title {
+            font-size: 18px;
+            font-weight: 600;
+            color: $color;
+            text-decoration: none;
+            padding: 8px 0  0 0;
+        }
+        .responce_item__desc {
+            font-size: 15px;
+            color: $color;
+            text-decoration: none;
+            padding: 6px 0 0 0;
+        }
+
+        // тизер отзыва: бейдж оценки на фото (поле rating)
+        .responce_item__rating {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            color: $color;
+        }
+
+        // тизер отзыва: дата поездки и туристы (поля trip_date, adults)
+        .responce_item__meta {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 10px 0 2px;
+        }
+
+        .responce_item__meta-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 14px;
+            color: $colorGrey;
+            padding: 2px 0;
+
+            svg {
+                flex: 0 0 auto;
+            }
+        }
+    }
+
+
+    .responce_item__link:hover {
+        position: relative;
+        display: block;
+        .responce_item__circle {
+            span {
+                border-left: 11px solid $colorBlue;
+
+            }
+
+        }
+        .responce_item__title {
+            color: $colorRed;
+        }
+    }
+
+
+    .responce_item__circle {
+        right: 20px;
+        top: 20px;
+        z-index: 10;
+    }
+
+}
+
+
+.slick_slider__responcescarusel  {
+    .slick-slide {
+        margin-right: 30px;
+    }
+}

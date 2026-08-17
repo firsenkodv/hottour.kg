@@ -1,0 +1,79 @@
+
+    public function fields(): array
+    {
+        return [
+            Block::make([
+
+
+                ID::make()->sortable()
+                    ->useOnImport()
+                    ->showOnExport(),
+
+                Text::make(__('Заголовок'), 'title')
+                    ->required()
+                    ->useOnImport()
+                    ->showOnExport(),
+
+                Text::make(__('Фото'), 'img')
+                    ->hideOnIndex()
+                    ->useOnImport()
+                    ->showOnExport(),
+
+                Slug::make(__('Алиас'), 'slug')
+                    ->from('title')
+                    ->unique()
+                    ->useOnImport()
+                    ->showOnExport(),
+
+                Text::make(__('h_c_id'), 'hot_category_id')
+                    ->useOnImport()
+                    ->showOnExport(),
+
+                TinyMce::make('Краткое описание', 'smalltext')->hideOnIndex()
+                    ->useOnImport()
+                    ->showOnExport(),
+
+
+                Switcher::make('img', 'img')->hideOnForm(),
+                Switcher::make('small', 'smalltext')->hideOnForm(),
+                Switcher::make('text.', 'text')->hideOnForm(),
+                Switcher::make('text2.', 'text2')->hideOnForm(),
+                Switcher::make('text3', 'text3')->hideOnForm(),
+                Switcher::make('desc', 'description')->hideOnForm(),
+                Switcher::make('key', 'keywords')->hideOnForm(),
+                Text::make('Мета тэг (title) ', 'metatitle')->hideOnIndex()
+                    ->useOnImport()
+                    ->showOnExport(),
+
+                Text::make('Мета тэг (description) ', 'description')->hideOnIndex()
+                    ->useOnImport()
+                    ->showOnExport(),
+
+                Text::make('Мета тэг (keywords) ', 'keywords')->hideOnIndex()
+                    ->useOnImport()
+                    ->showOnExport(),
+
+                Switcher::make('Публикация', 'published')->default(1)->hideOnIndex(),
+
+                TinyMce::make('Описание', 'text')
+                    ->useOnImport()
+                    ->showOnExport()
+                    ->hideOnIndex(),
+
+                TinyMce::make('Описание', 'text2')
+                    ->useOnImport()
+                    ->showOnExport()
+                    ->hideOnIndex(),
+
+                TinyMce::make('Описание', 'text3')
+                    ->useOnImport()
+                    ->showOnExport()
+                    ->hideOnIndex()
+
+            ]),
+
+
+        ];
+    }
+
+

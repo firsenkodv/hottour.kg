@@ -1,0 +1,95 @@
+footer.background_292F3D {
+  position: relative;
+  z-index: 40;
+  background: #292F3D;
+  color: #ffffff;
+  width: 100%; }
+
+.f_flextop {
+  display: flex;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.4); }
+  .f_flextop a {
+    color: #fff;
+    text-decoration: none; }
+  .f_flextop .f_flextop__left {
+    width: 76%;
+    display: flex;
+    padding: 30px 0 20px; }
+    .f_flextop .f_flextop__left .fl_1 {
+      width: 38%; }
+    .f_flextop .f_flextop__left .fl_2 {
+      width: 62%;
+      display: flex; }
+      .f_flextop .f_flextop__left .fl_2 .ff {
+        width: 100%;
+        max-width: 200px;
+        padding: 10px; }
+        .f_flextop .f_flextop__left .fl_2 .ff .h4 {
+          font-weight: 600;
+          color: #fff;
+          padding: 10px 0 16px 0;
+          font-size: 20px; }
+        .f_flextop .f_flextop__left .fl_2 .ff a {
+          display: block;
+          padding: 5px 0;
+          transition: 0.2s; }
+        .f_flextop .f_flextop__left .fl_2 .ff a:hover {
+          text-decoration: underline; }
+        .f_flextop .f_flextop__left .fl_2 .ff li.active a {
+          color: #EF533F;
+          text-decoration: underline; }
+      .f_flextop .f_flextop__left .fl_2 .f1 {
+        width: 25%;
+        max-width: 100%; }
+      .f_flextop .f_flextop__left .fl_2 .f2 {
+        width: 30%;
+        max-width: 100%; }
+      .f_flextop .f_flextop__left .fl_2 .f3 {
+        width: 45%;
+        max-width: 100%; }
+  .f_flextop .f_flextop__right {
+    width: 24%;
+    padding: 30px 0 20px 0; }
+    .f_flextop .f_flextop__right .top_socialBig a {
+      margin-right: 10px !important; }
+    .f_flextop .f_flextop__right .f_social__label {
+      padding: 24px 0 20px 0; }
+    .f_flextop .f_flextop__right .f_social__mobileapp {
+      padding: 40px 0 5px  0; }
+    .f_flextop .f_flextop__right .android_ios {
+      justify-content: start; }
+      .f_flextop .f_flextop__right .android_ios a:first-child {
+        margin-left: 0; }
+
+.f_contact {
+  padding: 10px 10px 10px 0; }
+  .f_contact .f_contact__label {
+    color: rgba(224, 224, 224, 0.4);
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px 0; }
+  .f_contact .f_contact__label_address {
+    padding: 10px 0;
+    color: rgba(224, 224, 224, 0.4);
+    font-size: 14px;
+    font-weight: 300; }
+  .f_contact .f_contact__phone {
+    font-size: 18px; }
+  .f_contact .f_contact__address {
+    font-size: 18px; }
+    .f_contact .f_contact__address div {
+      padding: 3px 0; }
+
+.f_flexbottom {
+  display: flex;
+  min-height: 40px;
+  align-items: center; }
+  .f_flexbottom .copyright {
+    color: #667085;
+    padding: 0 20px 0 0; }
+  .f_flexbottom a {
+    color: #fff; }
+  .f_flexbottom .sign_the_contract {
+    font-size: 15px; }
+
+/*# sourceMappingURL=footer.css.map */

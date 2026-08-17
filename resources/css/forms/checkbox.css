@@ -1,0 +1,89 @@
+.checkbox {
+  margin: 15px; }
+
+@keyframes pull {
+  0% {
+    height: 0; }
+  100% {
+    height: 1.2rem; } }
+@keyframes pop {
+  0% {
+    opacity: 0; }
+  75% {
+    opacity: 1; }
+  100% {
+    transform: scale(1.2); } }
+.checkbox-flip, .checkbox-pop, .checkbox-pull, .checkbox-spin {
+  display: none; }
+
+.checkbox-flip + label span,
+.checkbox-pop + label span,
+.checkbox-pull + label span,
+.checkbox-spin + label span {
+  display: inline-block;
+  width: 25px;
+  height: 17px;
+  margin: 0 5px -4px 0;
+  /*layout relationship between check and label*/ }
+  .checkbox-flip + label span:before, .checkbox-flip + label span:after,
+  .checkbox-pop + label span:before,
+  .checkbox-pop + label span:after,
+  .checkbox-pull + label span:before,
+  .checkbox-pull + label span:after,
+  .checkbox-spin + label span:before,
+  .checkbox-spin + label span:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 0.8rem;
+    height: 0.8rem;
+    background: transparent;
+    border: 1px solid #282828;
+    border-radius: 3px; }
+  .checkbox-flip + label span:after,
+  .checkbox-pop + label span:after,
+  .checkbox-pull + label span:after,
+  .checkbox-spin + label span:after {
+    z-index: 0;
+    border: none; }
+
+.a_user__checkbox_all .checkbox-flip + label span,
+.a_user__checkbox_all .checkbox-pop + label span,
+.a_user__checkbox_all .checkbox-pull + label span,
+.a_user__checkbox_all .checkbox-spin + label span {
+  width: 25px;
+  height: 17px;
+  margin: 2px 5px -4px 0;
+  /*layout relationship between check and label*/ }
+  .a_user__checkbox_all .checkbox-flip + label span:before, .a_user__checkbox_all .checkbox-flip + label span:after,
+  .a_user__checkbox_all .checkbox-pop + label span:before,
+  .a_user__checkbox_all .checkbox-pop + label span:after,
+  .a_user__checkbox_all .checkbox-pull + label span:before,
+  .a_user__checkbox_all .checkbox-pull + label span:after,
+  .a_user__checkbox_all .checkbox-spin + label span:before,
+  .a_user__checkbox_all .checkbox-spin + label span:after {
+    border: 1px solid #667085; }
+.a_user__checkbox_all span {
+  position: relative;
+  left: 6px; }
+
+.checkbox-flip:checked + label span:before {
+  transform: rotateY(180deg);
+  background: #EF533F;
+  border: 1px solid #EF533F; }
+
+.checkbox-pop:checked + label span:before {
+  animation: pop .3s ease;
+  z-index: 100;
+  background: #EF533F; }
+
+.checkbox-pull:checked + label span:after {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #EF533F;
+  animation: pull .4s linear; }
+
+.checkbox-spin:checked + label span:before {
+  background: #EF533F; }
+
+/*# sourceMappingURL=checkbox.css.map */

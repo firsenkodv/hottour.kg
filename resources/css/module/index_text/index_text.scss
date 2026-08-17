@@ -1,0 +1,63 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+.t_vid {
+background-color: #F7F7F7;
+    padding: 60px 0 40px 0;
+
+    .t_vid__block {
+
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 24px;
+
+
+            h3 {
+                font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 1.1em;
+
+            }
+
+        }
+
+
+
+    .t_vid__wrapper {
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        .t_vid_item {
+            .t_vid_item__title {
+                font-size: 24px;
+                font-weight: 600;
+                padding: 16px 0 6px 0;
+
+            }
+            .t_vid_item__desc {
+
+            }
+        }
+
+    }
+
+}
+
+

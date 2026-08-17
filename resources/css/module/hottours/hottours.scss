@@ -1,0 +1,272 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+
+.h_sw {
+    padding: 16px 0;
+
+    .h_sw__flex {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 24px;
+
+        h1, h2 {
+            font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 1.2em;
+
+        }
+
+        p {
+            color: $colorGrey;
+            font-size: 20px;
+        }
+
+        .h_sw__left {
+
+        }
+
+        .h_sw__right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+            padding: 27px 0 0 0;
+
+            .h_nav {
+                display: flex;
+            }
+
+            .h_sw__search {
+                padding: 0;
+
+            }
+
+        }
+    }
+}
+
+// навигацию карусели обслуживают кнопки .h_nav в шапке блока
+// (.click_slider_hot_p__js / .click_slider_hot_n__js), родные стрелки slick
+// прячем — они висели по краям экрана и почти не читались
+.slick_slider__carusel {
+    .slick-prev, .slick-next {
+        display: none !important;
+    }
+}
+
+.search_tours {
+    .h_sw__search {
+      display: none;
+    }
+}
+.hot_item {
+
+    border-radius: 12px;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
+    border: 3px solid rgba(224, 224, 224, 0.4);
+    width: 289px;
+    position: relative;
+    margin: 0 auto;
+    // .hot_item__top
+    &__top {
+        border-radius: 12px 12px 0 0;
+        overflow: hidden;
+        display: block;
+
+        img.hot_item__img {
+        }
+
+        .div_sale_absol {
+
+
+            width: 38px;
+            height: 43px;
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAArCAYAAAAUo/pwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkI5MzYxQzI4Qjg1MzExRUI4MzA5RjY0QkZBNkFCODE0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkI5MzYxQzI5Qjg1MzExRUI4MzA5RjY0QkZBNkFCODE0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjkzNjFDMjZCODUzMTFFQjgzMDlGNjRCRkE2QUI4MTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjkzNjFDMjdCODUzMTFFQjgzMDlGNjRCRkE2QUI4MTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5Gw489AAAB2ElEQVR42uyYzUoCURTH7zVxFYIGblq0UdoYGK3yC9K1lKI9Q88QLXyGdq16gCyzaKsgokEoQq5cBG1ChQw1M7U7t3vHrs0Mk5BauDh/OMz9mnN+939mNZhGvBQtoAxoQQVgAAZgAAZgAAZgAAZgAAZgAAZgAAZgAAZgAKYVlY5qrZ6p+zpYRhQdzCOlcTYglEfkI4SvbptfK0MWJzTsziBsOGVj9/87Rkjs7unZp4AaCyfz1VrvbWcW9/Cvf3VylyQSwqlCU2/b7/ejdruNyuXy6PjuthUtGa/ZyP13jhEUq9RbPg7lcrlUW9FoVIbiMpvN3zdnZ9crdQ97Nzh/MIrOWOtWcCqX2MjfSxxAOKKUzWZD2WxWDgHJVa1WGWAu/dLvmRhqfh5gj6xtAZzM7YvW8YK8sNIpoUQiIc/j8bh8RuwJSOtNcbj50GHukeD0YFQ67nb6DnxZyChvr4QSMFxOp3M852BKYOU7drudtzfdHfYnuqf38XOXIjHjakk4IIpPq0k5WP0t9jhnsaZ2TEIBpUvonXCXSo1GQ+WAKhmlqrEI7Z7WVW1rZWcuckVCBg6E8eF4UaKRUbKw18JD+80IIO1TD0Bvrgf5Uz5el+55LDQ04vgUYAB9Ye0evHhp2AAAAABJRU5ErkJggg==');
+
+            position: absolute;
+            top: 0;
+            left: 16px;
+            color: #ffffff;
+            overflow: hidden;
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0 0 0;
+            z-index: 10;
+
+        }
+
+        // .hot_item__img
+        &__img {
+        }
+    }
+
+    // .hot_item__bottom
+    &__bottom {
+        padding: 16px 16px 24px 16px;
+        background: #ffffff;
+        border-radius: 0 0 12px 12px;
+        overflow: hidden;
+
+
+        // .hot_item__avia
+        .hot_item__avia {
+            display: flex;
+            color: $colorBlue;
+            font-size: 14px;
+            position: relative;
+            padding: 0 0 10px 0;
+
+
+            i {
+                width: 18px;
+                height: 17px;
+                display: block;
+
+
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxOCAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy4xNzQgNS4zMjE5OEMxNi45OTA5IDUuNTMxMjUgMTYuNzY3OCA1LjcwNzcxIDE2LjUwOTcgNS44MzgyM0wzLjg5NTgzIDEyLjE2NTlMMC4yNSA3LjU4MDIxTDAuMzc1NDE3IDcuNTAyOTJMMi40MjUxIDYuNDc0NzlMMy45MTc3MSA3LjA2Njg3TDYuMDM5NTggNi4wMjU2MkwxLjc3Njg4IDEuOTI4NDRMNC42MjUgMC41TDExLjAzOTUgMy41MDU2M0wxNC42MTMxIDEuNzA0NThDMTUuNzAyNSAxLjE1NjI1IDE3LjAwOTIgMS42MzY3NyAxNy41MzI3IDIuNzc3OTJDMTcuOTMyMyAzLjY0NzgxIDE3Ljc2MDkgNC42NTE4NyAxNy4xNzQgNS4zMjE5OFpNMC45NzkxNjcgMTUuMDgzNEgxNy4wMjA4QzE3LjQyMTkgMTUuMDgzNCAxNy43NSAxNS40MTE1IDE3Ljc1IDE1LjgxMjVDMTcuNzUgMTYuMjEzNiAxNy40MjE5IDE2LjU0MTcgMTcuMDIwOCAxNi41NDE3SDAuOTc5MTY3QzAuNTc4MTI1IDE2LjU0MTcgMC4yNSAxNi4yMTM2IDAuMjUgMTUuODEyNUMwLjI1IDE1LjQxMTUgMC41NzgxMjUgMTUuMDgzNCAwLjk3OTE2NyAxNS4wODM0WiIgZmlsbD0iIzAwQUZFRiIvPgo8L3N2Zz4K');
+
+
+            }
+
+            span {
+                position: relative;
+                top: 2px;
+                left: 10px;
+            }
+        }
+
+        // .hot_item__title
+        .hot_item__title {
+            font-size: 23px;
+            padding: 0 0 16px 0;
+            display: block;
+            color: $color;
+            text-decoration: none;
+            transition: 0.3s;
+
+        }
+        a.hot_item__title:hover {
+            color: $colorRed;
+        }
+        .hot_item__wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 143px;
+            overflow: hidden;
+            .hot_item__wrap_t {
+                height: 58px;
+                overflow: hidden;
+
+            }
+            .hot_item__wrap_b {
+                height: 63px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+            }
+
+        }
+
+        // .hot_item__date
+        .hot_item__date {
+            font-size: 15px;
+            padding: 0 0 8px 0;
+            color: $colorGrey;
+        }
+        // .hot_item__hotel
+        .hot_item__hotel {
+            font-size: 15px;
+            padding: 0 0 8px 0;
+            color: $colorGrey;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 100%;
+
+            span {
+                color: $color;
+                font-weight: 600;
+            }
+        }
+
+
+        // .hot_item__odred
+        .hot_item__odred {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 56px;
+            position: relative;
+
+        }
+
+        .hot_item__price {
+            width: 45%;
+            position: relative;
+            font-size: 24px;
+            font-weight: 600;
+            span {
+              //  font-size: 14px;
+
+            }
+            .priceold {
+                font-size: 15px;
+                font-weight: 400;
+                position: relative;
+                color: $colorGrey;
+                text-decoration: line-through;
+                top: 3px;
+
+            }
+
+        }
+
+        .hot_item__button {
+            position: relative;
+            width: 55%;
+        }
+
+        .h_order {
+
+            .h_priceold {
+
+            }
+
+            .h_price {
+
+            }
+        }
+    }
+}
+
+
+

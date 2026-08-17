@@ -1,0 +1,209 @@
+.rating {
+    margin: 0;
+    padding: 12px 0;
+    border: none;
+}
+
+/* Caption */
+
+.rating__caption {
+    margin-bottom: 0.5em;
+    padding: 0;
+}
+
+/* Group */
+
+.rating__group {
+    position: relative;
+    width: 125px;
+    height: 25px;
+    background-image: url('../stars/css/images/stars/star.svg');
+    background-size: 25px auto;
+    background-repeat: repeat-x;
+}
+
+/* Star */
+
+.rating__star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 25px;
+    font-size: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-size: 25px auto;
+    background-repeat: repeat-x;
+}
+
+.rating__group .rating__star:focus {
+    outline: none;
+}
+
+.rating__group .rating__star:focus ~ .rating__focus {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    outline: 0.2em solid #4a90e2;
+    outline-offset: 0.2em;
+}
+
+
+.rating__group .rating__star:hover,
+.rating__group .rating__star:checked {
+    background-image: url('../stars/css/images/stars/star_active.svg');
+}
+
+.rating__group .rating__star:hover ~ .rating__star {
+    background-image: url('../stars/css/images/stars/star.svg');
+}
+
+/* Options */
+
+.rating__star:nth-of-type(1) {
+    z-index: 5;
+    width: 25px;
+}
+
+.rating__star:nth-of-type(2) {
+    z-index: 4;
+    width: 50px;
+}
+
+.rating__star:nth-of-type(3) {
+    z-index: 3;
+    width: 75px;
+}
+
+.rating__star:nth-of-type(4) {
+    z-index: 2;
+    width: 100px;
+}
+
+.rating__star:nth-of-type(5) {
+    z-index: 1;
+    width: 125px;
+}
+
+
+
+
+
+
+
+
+
+.rating-area {
+    overflow: hidden;
+    width: 187px;
+    margin: 0;
+    padding: 0;
+}
+.rating-area:not(:checked) > input {
+    display: none;
+}
+.rating-area:not(:checked) > label {
+    float: right;
+    width: 28px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 32px;
+    color: lightgrey;
+}
+.rating-area:not(:checked) > label:before {
+    content: '★';
+}
+.rating-area > input:checked ~ label {
+    color: #fcb60b;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+    color: #fcb60b;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+    color: #fcb60b;
+}
+
+
+
+
+.rating-area_survey {
+    overflow: hidden;
+    width: 187px;
+    margin: 0;
+    padding: 0;
+}
+.rating-area_survey:not(:checked) > input {
+    display: none;
+}
+.rating-area_survey:not(:checked) > label {
+    float: right;
+    width: 28px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 32px;
+    color: lightgrey;
+}
+.rating-area_survey:not(:checked) > label:before {
+    content: '★';
+}
+.rating-area_survey > input:checked ~ label {
+    color: #fcb60b;
+}
+.rating-area_survey:not(:checked) > label:hover,
+.rating-area_survey:not(:checked) > label:hover ~ label {
+    color: #fcb60b;
+}
+.rating-area_survey > input:checked + label:hover,
+.rating-area_survey > input:checked + label:hover ~ label,
+.rating-area_survey > input:checked ~ label:hover,
+.rating-area_survey > input:checked ~ label:hover ~ label,
+.rating-area_survey > label:hover ~ input:checked ~ label {
+    color: #fcb60b;
+}
+
+
+
+
+
+
+
+
+
+.rate-area > label:active {
+    position: relative;
+}
+
+
+.rating-result {
+    overflow: hidden;
+    width: 213px;
+    margin: 0;
+    padding: 8px 0 0 0;
+}
+.rating-result span {
+    padding: 0;
+    font-size: 32px;
+    margin: 0 3px;
+    line-height: 1;
+    color: lightgrey;
+    /*  text-shadow: 1px 1px #bbb;*/
+}
+.rating-result > span:before {
+    content: '★';
+}
+.rating-result > span.active {
+    color: #fcb60b;
+    /*    text-shadow: 1px 1px #c60;*/
+}

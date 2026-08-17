@@ -1,0 +1,54 @@
+.qr_top {
+  display: flex;
+  justify-content: space-between;
+  height: 124px;
+  background: #ffffff;
+  padding: 24px 24px 0 24px;
+  border-radius: 12px 12px 0 0; }
+  .qr_top__left {
+    width: 65%; }
+  .qr_top__right {
+    width: 35%; }
+  .qr_top .qr_company {
+    display: flex;
+    justify-content: start; }
+    .qr_top .qr_company__left {
+      width: 62px;
+      height: 62px;
+      border-radius: 8px;
+      background: #EF533F;
+      margin: 8px 10px 0 0; }
+    .qr_top .qr_company__right {
+      margin: 8px 0 0 10px; }
+    .qr_top .qr_company__title {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 1px; }
+    .qr_top .qr_company__subtitle {
+      font-size: 14px;
+      position: relative;
+      top: -2px; }
+  .qr_top .qr_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+
+.qr_bottom {
+  background: #EF533F;
+  padding: 0 24px 24px 24px;
+  border-radius: 12px; }
+  .qr_bottom .qr_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px 20px 16px; }
+    .qr_bottom .qr_img img {
+      border-radius: 12px; }
+  .qr_bottom .qr_text {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    color: #ffffff; }
+
+/*# sourceMappingURL=qr_modal.css.map */

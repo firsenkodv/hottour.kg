@@ -1,0 +1,48 @@
+#scrollTopBtn {
+    display: none;           /* Изначально скрыта */
+    position: fixed;         /* Фиксированное положение */
+    bottom: 92px;            /* Расстояние снизу */
+    right: 16px;             /* Расстояние справа */
+    z-index: 1002;             /* Поверх всех элементов */
+    border: none;            /* Без границ */
+    outline: none;           /* Убираем контур при фокусировке */
+    background-color: #ffffff;   /* Цвет фона */
+    color: black;               /* Цвет текста */
+    cursor: pointer;          /* Курсор изменения */
+
+    font-size: 18px;           /* Размер шрифта */
+    transition:0.3s; /* Эффект плавного появления */
+
+
+
+
+
+    width: 58px;
+    height: 58px;
+    border-radius: 35px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAbFBMVEUAAAC0tLT///////+ysrK1tbX///+4uLi8vLz+/v79/f3Nzc2+vr7///+tra3////6+vqtra3////W1tbMzMzT09Pg4ODa2trGxsbR0dHOzs6/v7+6urrk5OTc3NzIyMi8vLy0tLTBwcG2trbtm7WfAAAAE3RSTlMAEaQBzs0Hzcy8tfPWqyQC67ESgTY08wAAAM1JREFUWMPtj80WgiAQRoXKslKrGUTAv/T937FBz8llgsvmsmJx75kvYRiGYf6I4lns8sXxfRT7/IYKO/zJOTdFF8SpqT3NSUT7aK1FX4j1DQCYuII4D71VuqOnbD+cRYwPukKHlYbwgrg4NNBVqB4Kq45muIsI9JX2vnxJX9AqrHAfkc5vEWSZlBKwpRk43rcHbrX3LcgDfQ4SrC/Ut+2BjM5uzewvBdPSnGx7IL0qs/jfglHXNAkqzP5aCPOpkOXkr4U8SxOGYRiG+c0HcR8P/+DS5akAAAAASUVORK5CYII=');
+
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+
+    &.show {       /* Показываем кнопку, когда прокручиваем страницу вниз */
+        display: flex;
+        opacity: 1;
+        background-size: 58px;
+        border: none;
+    }
+    &:hover {
+        box-shadow:   0 0 10px rgba(0, 0, 0, 0.3)
+
+    }
+
+}
+
+@media (max-width: 794px) {
+    #scrollTopBtn,
+    #scrollTopBtn.show, {
+        display: none;
+    }
+}

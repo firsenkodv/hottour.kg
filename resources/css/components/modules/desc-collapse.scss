@@ -1,0 +1,66 @@
+/* Сворачивание описания до первого абзаца — компонент <x-content.collapse>,
+   перенесено из hseipaa.kz */
+
+.desc-collapse {
+    /* Цвет затухания снизу — должен совпадать с фоном под блоком */
+    --desc-collapse-fade: #fff;
+}
+
+.desc-collapse__body {
+    position: relative;
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+}
+
+.desc-collapse.is-collapsed .desc-collapse__body::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--desc-collapse-fade));
+    pointer-events: none;
+}
+
+.desc-collapse__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px auto 0;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #EF533F;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        opacity: 0.75;
+    }
+}
+
+.desc-collapse__btn[hidden] {
+    display: none;
+}
+
+.desc-collapse__icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.desc-collapse__btn[aria-expanded='true'] .desc-collapse__icon {
+    transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .desc-collapse__body,
+    .desc-collapse__icon {
+        transition: none;
+    }
+}

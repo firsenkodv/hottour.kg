@@ -1,0 +1,64 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\MoonShine\Resources\Dump;
+
+use App\Models\Dump;
+use App\MoonShine\Resources\Dump\Pages\DumpFormPage;
+use App\MoonShine\Resources\Dump\Pages\DumpIndexPage;
+use Leeto\MoonShineTree\Resources\TreeResource;
+use MoonShine\Contracts\Core\PageContract;
+use MoonShine\MenuManager\Attributes\Group;
+use MoonShine\MenuManager\Attributes\Order;
+use MoonShine\Support\Attributes\Icon;
+use MoonShine\Support\Enums\Action;
+use MoonShine\Support\ListOf;
+
+/**
+ * @extends TreeResource<Dump>
+ */
+#[Icon('document-text')]
+#[Group('Категории', 'folder')]
+#[Order(3)]
+class DumpResource extends TreeResource
+{
+    protected string $model = Dump::class;
+
+    protected string $title = 'Полезное';
+
+    protected string $column = 'title';
+
+    protected string $sortColumn = 'sorting';
+
+    /**
+     * @return list<class-string<PageContract>>
+     */
+    protected function pages(): array
+    {
+        return [
+            DumpIndexPage::class,
+            DumpFormPage::class,
+        ];
+    }
+
+    protected function activeActions(): ListOf
+    {
+        return parent::activeActions()->except(Action::VIEW);
+    }
+
+    protected function search(): array
+    {
+        return ['id', 'title'];
+    }
+
+    public function treeKey(): ?string
+    {
+        return null;
+    }
+
+    public function sortKey(): string
+    {
+        return 'sorting';
+    }
+}

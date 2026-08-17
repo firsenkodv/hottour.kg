@@ -1,0 +1,122 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #29ABE2;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+.qr_top {
+    display: flex;
+    justify-content: space-between;
+    height: 124px;
+    background: #ffffff;
+    padding: 24px 24px 0 24px;
+    border-radius: 12px 12px 0 0;
+
+    // .qr_top__left
+    &__left {
+        width: 65%;
+    }
+
+    // .qr_top__right
+    &__right {
+        width: 35%;
+    }
+
+
+    .qr_company {
+        // .qr_company__left
+        display: flex;
+        justify-content: start;
+        &__left {
+            width: 62px;
+            height: 62px;
+            border-radius: 8px;
+            background: $colorRed;
+            margin: 8px 10px 0 0;
+
+        }
+
+        // .qr_company__right
+        &__right {
+            margin: 8px 0 0 10px;
+        }
+
+        // .qr_company__title
+        &__title {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+        }
+
+        // .qr_company__subtitle
+        &__subtitle {
+                font-size: 14px;
+                position: relative;
+                top: -2px;
+
+        }
+    }
+
+    .qr_logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .qr_stars {
+    }
+
+    .qr_icon {
+        // .qr_icon__apple
+        &__apple {
+        }
+
+        // .qr_icon__google
+        &__google {
+        }
+    }
+}
+
+.qr_bottom {
+    background:$colorRed ;
+    padding: 0 24px 24px 24px;
+    border-radius: 12px;
+
+
+    .qr_img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 16px 20px 16px;
+        img
+        {
+            border-radius: 12px;
+
+        }
+
+
+    }
+
+    .qr_text {
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: 0.3px;
+        color: #ffffff;
+    }
+
+}
+

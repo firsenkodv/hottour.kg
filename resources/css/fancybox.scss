@@ -1,0 +1,97 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+/////////////////////////////////////////////
+//fancybox //////
+////////////////////////////////////////////
+.fancybox__backdrop {
+    //background: #949491 !important;
+    background: #00000080 !important;
+}
+
+.dialogFancyBox {
+    display: none;
+    width: 600px;
+    padding: 24px !important;
+    border-radius: 24px !important;
+
+    .f-button.is-close-btn {
+        top: 14px !important;
+        right: 14px !important;
+        background: #fff !important;
+        border: none !important;
+
+        svg {
+            color: $colorGrey !important;
+        }
+    }
+
+     h1 {
+        color: #282828;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 1.3em;
+        padding: 0 0 10px 0;
+    }
+
+    h2 {
+        color: #00AFEF;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.3em;
+        padding: 5px 0;
+    }
+
+      h3 {
+        color: #667085;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.3em;
+        padding: 5px 0;
+    }
+    p {
+        line-height: 1.5em;
+        padding: 10px 0;
+    }
+    ul {
+        position: relative;
+        padding: 0 0 0 48px;
+        li {
+            line-height: 1.5em;
+            padding: 4px 0 ;
+            position: relative;
+
+
+            &:before {
+                content: '';
+                width: 20px;
+                height: 3px;
+                background: $colorBlue;
+                position: absolute;
+                top: 16px;
+                left: -33px;
+            }
+        }
+    }
+    &__line {
+        width: 100%;
+        height: 1px;
+        background: #ddd;
+        margin: 6px 0;
+    }
+}

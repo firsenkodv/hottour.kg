@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+// Селекты (chosen) в модальных формах — «Подобрать тур» и т.п.
+//
+// Общие стили chosen (chosen/chosen.scss) рассчитаны на формы поиска: высота
+// 38px, радиус 8px, шрифт 13px. В модальных формах поля другие — 46px, радиус
+// 12px, шрифт 15px (forms/input.scss), поэтому здесь селекты приводятся к ним.
+// Правила ограничены .F_form .form_select, чтобы не задеть поиск.
+
+$color: #282828;
+$colorGrey: #667085;
+$borderColor: #dddddd;
+$fieldHeight: 46px;
+$fieldRadius: 12px;
+
+.F_form .form_select {
+
+    .chosen-container {
+        // chosen проставляет ширину инлайном
+        width: 100% !important;
+        margin: 2px 0;
+        font-size: 15px;
+    }
+
+    .chosen-container-single .chosen-single {
+        height: $fieldHeight;
+        line-height: $fieldHeight - 2px;
+        padding: 0 12px;
+        border: 1px solid $borderColor;
+        border-radius: $fieldRadius;
+        color: $color;
+        font-size: 15px;
+
+        span {
+            margin-right: 30px;
+        }
+
+        // стрелка по центру поля новой высоты
+        div b {
+            top: 8px;
+        }
+    }
+
+    // подпись, когда ничего не выбрано — как placeholder у текстовых полей
+    .chosen-container-single .chosen-default {
+        color: $colorGrey;
+    }
+
+    .chosen-container-active.chosen-with-drop .chosen-single {
+        border-radius: $fieldRadius $fieldRadius 0 0;
+    }
+
+    .chosen-container .chosen-drop {
+        border-radius: 0 0 $fieldRadius $fieldRadius;
+    }
+
+    .chosen-container-single .chosen-search input[type="text"] {
+        font-size: 15px;
+    }
+
+    .chosen-results {
+        font-size: 15px;
+    }
+}
+
+/* Форма «Приобретение сертификата»: что именно заказывают —
+   тип сертификата и выбранный номинал (заполняет ajax.js) */
+
+.F_form_certificate {
+    // шапка этой формы красная — подзаголовок на ней должен быть светлым
+    .F_h2 span {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    // кнопка отправки отделена от полей заметнее, чем поля друг от друга
+    .text_input.r_right {
+        margin-top: 16px;
+    }
+
+    .cert_order__summary {
+        margin-bottom: 16px;
+        padding: 14px 16px;
+        border-radius: 12px;
+        background: #F7F7F7;
+    }
+
+    .cert_order__row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+
+        + .cert_order__row {
+            margin-top: 8px;
+        }
+    }
+
+    .cert_order__label {
+        font-size: 14px;
+        color: #667085;
+    }
+
+    .cert_order__value {
+        font-size: 16px;
+        font-weight: 700;
+        color: #282828;
+        text-align: right;
+    }
+}

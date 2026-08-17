@@ -1,0 +1,137 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+
+.hbox.temp_img_text {
+padding-bottom: 16px;
+
+
+    .hrow {
+
+
+        .hcol {
+            width: 100%;
+            height: 160px;
+            border-radius: 12px;
+            border: 2px solid rgba(224, 224, 224, 0.4);
+            background: #fff;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+
+        }
+        .hcol:last-child {
+
+            margin-bottom: 0;
+
+        }
+    }
+
+    .hcolImgText {
+        &__flex {
+            width: 100%;
+            height: 160px;
+            position: relative;
+        }
+        &__left {
+            width: 25%;
+            height: 100%;
+        }
+        &__right {
+            width: 75%;
+            height: 100%;
+            padding: 0 20px ;
+
+        }
+        &__title {
+            h2 {
+                font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+                font-size: 22px;
+                font-weight: 700;
+                margin: 24px 0 7px 0;
+                height: 28px;
+                overflow: hidden;
+                position: relative;
+                a {
+                    color: $color;
+                    text-decoration: none;
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                }
+                a:hover {
+                    color: $colorRed;
+                    text-decoration: none;
+                }
+            }
+
+        }
+        &__smalltext {
+            font-size: 15px;
+            height: 76px;
+            overflow: hidden;
+
+        }
+    }
+}
+
+.hcol.hcolImgText.hcol__hotels {
+    .hcolImgText {
+        &__flex {
+            width: 100%;
+            height: 160px;
+            position: relative;
+        }
+        &__left {
+            width: 25%;
+            height: 100%;
+        }
+        &__right {
+            width: 75%;
+            height: 100%;
+            padding: 0 20px ;
+
+            .hotel__redstar {
+                top: -4px;
+                font-size: 15px;
+                img {
+                    top: 2px;
+                }
+            }
+
+        }
+        &__title {
+            h2 {
+
+                margin: 24px 0 7px 0;
+                height: 28px;
+
+
+            }
+
+        }
+        &__smalltext {
+
+            height: 61px;
+            overflow: hidden;
+            padding: 5px 0 0 0;
+
+        }
+    }
+}
+

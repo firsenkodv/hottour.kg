@@ -1,0 +1,810 @@
+@charset "utf-8";
+
+// Лендинговый шаблон страницы раздела
+// (App\Enums\Pages\ListTemplate::Landing).
+// Вёрстка: resources/views/pages/{раздел}/templates/list/landing.blade.php
+// Макет: docs/figma/about/desktop/1-4.png, ассеты: public/images/landing/about
+
+$color: #282828;
+$colorRed: #EF533F;
+$colorGrey: #667085;
+$colorGreen: #16A34A;
+$bgBeige: #F6F3EF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin serif {
+    font-family: 'Philosopher', Georgia, 'Times New Roman', serif;
+}
+
+.page_landing {
+    display: block;
+    width: 100%;
+    background: #fff;
+}
+
+.landing {
+    @include family;
+    color: $color;
+
+    &__inner {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* ---------- общие элементы ---------- */
+
+    &__h2 {
+        @include adaptiv-font(40, 26);
+        margin: 0 0 16px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: $color;
+
+        &--serif {
+            @include serif;
+            text-align: center;
+        }
+
+        &--light {
+            color: #fff;
+        }
+    }
+
+    &__lead {
+        @include adaptiv-font(20, 15);
+        margin: 0 0 24px;
+        line-height: 1.5;
+        color: $colorGrey;
+
+        &--light {
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+        }
+
+        &--dark {
+            text-align: center;
+        }
+    }
+
+    &__text {
+        @include adaptiv-font(17, 15);
+        margin: 0 0 24px;
+        line-height: 1.55;
+        color: $colorGrey;
+    }
+
+    /* ---------- 1. hero ---------- */
+
+    // фоновая картинка приходит инлайном из blade (см. landing.blade.php),
+    // здесь — цвет-подложка и режим отрисовки
+    &__hero {
+        position: relative;
+        padding: 20px 0 72px;
+        background-color: #16211e;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+
+    &__crumbs {
+        text-align: left;
+        padding-bottom: 40px;
+
+        // хлебные крошки на фото — белые
+        a, span {
+            color: rgba(255, 255, 255, 0.75) !important;
+        }
+    }
+
+    &__title {
+        @include adaptiv-font(48, 28);
+        margin: 0 0 20px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #fff;
+    }
+
+    &__hero &__lead {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 12px 0 56px;
+    }
+
+    &__btn {
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-size: 17px;
+        line-height: 1.2;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &--primary {
+            background: $colorRed;
+            color: #fff;
+
+            // глобальный a:hover перекрашивает текст — оставляем белым
+            &:hover {
+                background: darken($colorRed, 8%);
+                color: #fff;
+            }
+        }
+
+        &--ghost {
+            background: rgba(255, 255, 255, 0.92);
+            color: $color;
+
+            &:hover {
+                background: #fff;
+            }
+        }
+    }
+
+    &__stats {
+        display: flex;
+        justify-content: center;
+        gap: 64px;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 150px;
+    }
+
+    &__stat-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 104px;
+        height: 104px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        background: rgba(20, 26, 24, 0.55);
+    }
+
+    &__stat-value {
+        @include serif;
+        @include adaptiv-font(30, 22);
+        font-weight: 700;
+        color: #fff;
+    }
+
+    &__stat-label {
+        margin-top: 6px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ---------- 2. о компании ---------- */
+
+    &__company {
+        padding: 80px 0;
+    }
+
+    &__company-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+    }
+
+    &__checklist {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__check {
+        display: flex;
+        gap: 14px;
+        padding-bottom: 24px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    &__check-icon {
+        flex: 0 0 24px;
+        padding-top: 2px;
+    }
+
+    &__check-body {
+        font-size: 15px;
+        line-height: 1.5;
+        color: $colorGrey;
+
+        strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 17px;
+            font-weight: 700;
+            color: $color;
+        }
+    }
+
+    &__company-photo {
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+        }
+    }
+
+    /* ---------- 3. наши преимущества ---------- */
+
+    &__advantages {
+        padding: 80px 0;
+        background-color: #0a2a28;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &__video {
+        max-width: 1120px;
+        margin: 40px auto 56px;
+        border: 4px solid $colorRed;
+        border-radius: 24px;
+        overflow: hidden;
+        background: #000;
+
+        video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__advcards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__advcard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 24px;
+        border-radius: 16px;
+        background: rgba(10, 34, 32, 0.55);
+        text-align: center;
+    }
+
+    &__advcard-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.14);
+    }
+
+    &__advcard-title {
+        @include serif;
+        @include adaptiv-font(22, 18);
+        margin-bottom: 10px;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    &__advcard-text {
+        font-size: 15px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ---------- 4. мобильное приложение ---------- */
+
+    &__app {
+        padding: 80px 0;
+        background: $bgBeige;
+    }
+
+    &__stores {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding-bottom: 48px;
+    }
+
+    &__store {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 18px;
+        border: 1px solid #E4E0DA;
+        border-radius: 10px;
+        background: #fff;
+        text-decoration: none;
+        color: $color;
+        transition: 0.3s;
+
+        &:hover {
+            border-color: $color;
+        }
+    }
+
+    &__store-label {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.2;
+
+        small {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: $colorGrey;
+        }
+    }
+
+    &__features {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin: 0 0 56px;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__feature {
+        display: flex;
+        flex-direction: column;
+        padding: 28px 24px;
+        border-radius: 16px;
+        background: #fff;
+    }
+
+    &__feature-icon {
+        margin-bottom: 20px;
+    }
+
+    &__feature-title {
+        @include serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: $color;
+    }
+
+    &__feature-text {
+        font-size: 15px;
+        line-height: 1.5;
+        color: $colorGrey;
+    }
+
+    &__phones {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        // как в макете: низ скринов растворяется в фон секции
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(246, 243, 239, 0) 55%, rgba(246, 243, 239, 0.85) 88%, $bgBeige 100%);
+            pointer-events: none;
+        }
+    }
+
+    /* ---------- 5. онлайн-оформление ---------- */
+
+    &__online {
+        padding: 40px 0 80px;
+        background: $bgBeige;
+    }
+
+    &__online-box {
+        padding: 56px 48px;
+        border-radius: 32px;
+        background: #fff;
+    }
+
+    &__steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 40px 0 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: none;
+    }
+
+    &__step {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        // соединительная линия между кружками
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 16px;
+            width: calc(50% - 28px);
+            height: 1px;
+            background: #E3E0DB;
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+
+        &:first-child::before,
+        &:last-child::after {
+            display: none;
+        }
+    }
+
+    &__step-num {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33px;
+        height: 33px;
+        border: 1px solid $colorRed;
+        border-radius: 50%;
+        background: #fff;
+        font-size: 15px;
+        color: $color;
+    }
+
+    &__step-label {
+        margin-top: 14px;
+        font-size: 15px;
+        font-weight: 700;
+        color: $color;
+        text-align: center;
+    }
+
+    &__stepcards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__stepcard {
+        padding: 28px 24px;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 2px 16px rgba(40, 40, 40, 0.08);
+        text-align: center;
+    }
+
+    &__stepcard-title {
+        @include serif;
+        display: block;
+        margin-bottom: 12px;
+        font-size: 20px;
+        font-weight: 700;
+        color: $color;
+    }
+
+    &__stepcard-text {
+        font-size: 14px;
+        line-height: 1.55;
+        color: $colorGrey;
+    }
+
+    /* ---------- 6. путешествовать безопасно ---------- */
+
+    &__safety {
+        padding: 80px 0;
+        background: #fff;
+    }
+
+    &__safecards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__safecard {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 16px;
+        overflow: hidden;
+        // фон текстовой части = фон 3d-картинок, вырезанных из макета
+        background: #E0CEB6;
+        text-align: center;
+    }
+
+    &__safecard-body {
+        display: block;
+        padding: 28px 20px 16px;
+    }
+
+    &__safecard-title {
+        display: block;
+        margin-bottom: 12px;
+        font-size: 18px;
+        font-weight: 700;
+        color: $color;
+    }
+
+    &__safecard-text {
+        font-size: 14px;
+        line-height: 1.55;
+        color: rgba(40, 40, 40, 0.75);
+    }
+
+    &__safecard img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+// FAQ внутри лендинга: компонент общий (components/modules/faq.scss),
+// здесь только уменьшенный верхний отступ
+.landing--about {
+    .faq {
+        padding: 54px 0 94px;
+        background: #fff;
+        max-width: 1160px;
+        margin: 0 auto;
+    }
+}
+
+// Отзывы (общий слайдер r_sw с главной) внутри лендинга
+.landing__responses {
+    padding: 56px 0 0;
+    background: #fff;
+}
+
+// Описание раздела (после призыва к действию): текст из админки,
+// свёртка до первого абзаца — компонент desc-collapse
+.landing__desc {
+    padding: 56px 0;
+    background: #fff;
+}
+
+// Призыв к действию (блок 8 макета): фон приходит от класса index_questions
+// (base64-подложка в module/questions/questions.scss), здесь — своё содержимое
+.landing__cta {
+    padding: 64px 0 56px;
+    text-align: center;
+
+    &.index_questions {
+        min-height: 0;
+    }
+
+    .landing__actions {
+        padding: 12px 0 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        margin-bottom: 40px;
+    }
+
+    &-contacts {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 96px;
+        flex-wrap: wrap;
+    }
+
+    &-label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    &-phone {
+        @include adaptiv-font(34, 22);
+        font-weight: 700;
+        color: #fff;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+
+    &-icons {
+        display: inline-flex;
+        gap: 12px;
+    }
+
+    &-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        transition: 0.3s;
+
+        &--wa {
+            background: #4EBC5F;
+        }
+
+        &--tg {
+            background: #10A9FF;
+        }
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .landing__cta-contacts {
+        gap: 28px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ---------- адаптив ---------- */
+
+@media (max-width: 991px) {
+    .landing {
+        &__company-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        &__advcards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__features,
+        &__phones {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__stats {
+            gap: 32px;
+        }
+
+        &__stepcards {
+            grid-template-columns: 1fr;
+        }
+
+        &__safecards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .landing {
+        &__hero {
+            padding: 12px 0 48px;
+        }
+
+        &__crumbs {
+            padding-bottom: 24px;
+        }
+
+        &__actions {
+            padding: 8px 0 40px;
+
+            .landing__btn {
+                width: 100%;
+                max-width: 320px;
+                text-align: center;
+            }
+        }
+
+        &__stats {
+            gap: 24px;
+        }
+
+        &__stat {
+            min-width: 120px;
+        }
+
+        &__stat-icon {
+            width: 80px;
+            height: 80px;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        &__company,
+        &__advantages,
+        &__app {
+            padding: 48px 0;
+        }
+
+        &__advcards {
+            grid-template-columns: 1fr;
+        }
+
+        &__features {
+            grid-template-columns: 1fr;
+        }
+
+        &__video {
+            border-width: 3px;
+            border-radius: 14px;
+            margin: 24px auto 32px;
+        }
+
+        &__online {
+            padding: 24px 0 48px;
+        }
+
+        &__online-box {
+            padding: 32px 20px;
+            border-radius: 20px;
+        }
+
+        &__steps {
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+            .landing__step::before,
+            .landing__step::after {
+                display: none;
+            }
+        }
+
+        &__safety {
+            padding: 48px 0;
+        }
+
+        &__safecards {
+            grid-template-columns: 1fr;
+        }
+    }
+}

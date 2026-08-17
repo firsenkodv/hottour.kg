@@ -1,0 +1,71 @@
+.hbox.temp_img_text {
+  padding-bottom: 16px; }
+  .hbox.temp_img_text .hrow .hcol {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    border: 2px solid rgba(224, 224, 224, 0.4);
+    background: #fff;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden; }
+  .hbox.temp_img_text .hrow .hcol:last-child {
+    margin-bottom: 0; }
+  .hbox.temp_img_text .hcolImgText__flex {
+    width: 100%;
+    height: 160px;
+    position: relative; }
+  .hbox.temp_img_text .hcolImgText__left {
+    width: 25%;
+    height: 100%; }
+  .hbox.temp_img_text .hcolImgText__right {
+    width: 75%;
+    height: 100%;
+    padding: 0 20px; }
+  .hbox.temp_img_text .hcolImgText__title h2 {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 24px 0 7px 0;
+    height: 28px;
+    overflow: hidden;
+    position: relative; }
+    .hbox.temp_img_text .hcolImgText__title h2 a {
+      color: #282828;
+      text-decoration: none;
+      display: block;
+      position: relative;
+      width: 100%; }
+    .hbox.temp_img_text .hcolImgText__title h2 a:hover {
+      color: #EF533F;
+      text-decoration: none; }
+  .hbox.temp_img_text .hcolImgText__smalltext {
+    font-size: 15px;
+    height: 76px;
+    overflow: hidden; }
+
+.hcol.hcolImgText.hcol__hotels .hcolImgText__flex {
+  width: 100%;
+  height: 160px;
+  position: relative; }
+.hcol.hcolImgText.hcol__hotels .hcolImgText__left {
+  width: 25%;
+  height: 100%; }
+.hcol.hcolImgText.hcol__hotels .hcolImgText__right {
+  width: 75%;
+  height: 100%;
+  padding: 0 20px; }
+  .hcol.hcolImgText.hcol__hotels .hcolImgText__right .hotel__redstar {
+    top: -4px;
+    font-size: 15px; }
+    .hcol.hcolImgText.hcol__hotels .hcolImgText__right .hotel__redstar img {
+      top: 2px; }
+.hcol.hcolImgText.hcol__hotels .hcolImgText__title h2 {
+  margin: 24px 0 7px 0;
+  height: 28px; }
+.hcol.hcolImgText.hcol__hotels .hcolImgText__smalltext {
+  height: 61px;
+  overflow: hidden;
+  padding: 5px 0 0 0; }
+
+/*# sourceMappingURL=templates.css.map */

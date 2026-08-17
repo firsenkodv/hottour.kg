@@ -1,0 +1,27 @@
+.F_form_order_mini {
+  padding: 0 !important;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 12px !important;
+  position: relative; }
+  .F_form_order_mini .F_form__flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 16px 24px 0 24px;
+    height: 90px; }
+    .F_form_order_mini .F_form__flex .F_form__left .F_h1 {
+      padding: 5px 0 0 0;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.2em; }
+    .F_form_order_mini .F_form__flex .F_form__left .F_desc_top {
+      padding: 0 0 10px 0;
+      font-size: 14px; }
+  .F_form_order_mini .new__temp_middle {
+    padding: 11px  24px 24px 24px; }
+
+/*# sourceMappingURL=order_mini.css.map */

@@ -1,0 +1,184 @@
+.page_site_hotel h1, .page_site_hotel h2, .page_site_hotel h3 {
+  font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.1em;
+  padding: 10px 0 10px 0; }
+  .page_site_hotel h1 span, .page_site_hotel h2 span, .page_site_hotel h3 span {
+    position: relative; }
+    .page_site_hotel h1 span img, .page_site_hotel h2 span img, .page_site_hotel h3 span img {
+      border-radius: 8px;
+      position: relative;
+      top: 3px;
+      margin-right: 5px; }
+
+.hotel__title {
+  justify-content: space-between;
+  align-items: flex-start; }
+  .hotel__title h1 {
+    position: relative;
+    padding-right: 16px; }
+  .hotel__title .hotel__redstar {
+    top: 28px; }
+
+.hotel__redstar {
+  display: flex;
+  color: #667085;
+  height: 22px;
+  position: relative; }
+  .hotel__redstar img {
+    position: relative;
+    margin-right: 6px; }
+
+.hotel__first_photo {
+  display: block; }
+
+.hotel__placement {
+  font-size: 19px; }
+
+.hotel__services {
+  padding: 30px 0 10px 0;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #E0E0E0; }
+  .hotel__services h3 {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #282828;
+    line-height: 1.3em; }
+
+.hotel__dataservices {
+  width: 100%;
+  min-height: 40px;
+  overflow: hidden;
+  position: relative; }
+  .hotel__dataservices .wrapper_loader {
+    background-color: #e8f0fe; }
+
+.search_hotel_form__copy .wrapper_loader {
+  background-color: #e8f0fe; }
+
+.hotel__dataorder .wrapper_loader {
+  background-color: #e8f0fe; }
+
+.servise_item {
+  padding-bottom: 20px; }
+  .servise_item h4 {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #EF533F;
+    font-size: 22px;
+    padding: 10px 0 6px 0; }
+    .servise_item h4 span {
+      color: #282828; }
+  .servise_item.hotel_build {
+    background-position: 1px 11px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyBmaWxsPSIjRUY1MzNGIiB3aWR0aD0iNDAiIGhlaWdodD0iNDBweCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yMiwxSDEwQTEsMSwwLDAsMCw5LDJWNUgyQTEsMSwwLDAsMCwxLDZWMjJhMSwxLDAsMCwwLDEsMUgyMmExLDEsMCwwLDAsMS0xVjJBMSwxLDAsMCwwLDIyLDFaTTEzLDIxSDNWN0gxM1ptOCwwSDE1VjZhMSwxLDAsMCwwLTEtMUgxMVYzSDIxWk01LDEwQTEsMSwwLDAsMSw2LDloNGExLDEsMCwwLDEsMCwySDZBMSwxLDAsMCwxLDUsMTBabTAsNGExLDEsMCwwLDEsMS0xaDRhMSwxLDAsMCwxLDAsMkg2QTEsMSwwLDAsMSw1LDE0Wm0wLDRhMSwxLDAsMCwxLDEtMWg0YTEsMSwwLDAsMSwwLDJINkExLDEsMCwwLDEsNSwxOFoiLz48L3N2Zz4="); }
+    .servise_item.hotel_build h4 {
+      padding-left: 50px; }
+  .servise_item.hotel_roomtypes {
+    background-position: 1px 11px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzMiIHZpZXdCb3g9IjAgMCAzMiAzMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI2LjY2NiAxMS40OTg3QzI4Ljk2NiAxMC45MDY3IDMwLjY2NiA4LjgxODY3IDMwLjY2NiA2LjMzMzMzQzMwLjY2NiAzLjM4OCAyOC4yNzggMSAyNS4zMzI3IDFDMjQuMzYwNyAxIDIzLjQ1IDEuMjU4NjcgMjIuNjY2IDEuNzEzMzMiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTUuODMzMDEgMTEuNjY2N0gyMC44MzMiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTI1LjMzMyA2LjMzMzI1TDEzLjMzMyAyMC45OTk5TDEuMzMzMDEgNi4zMzMyNSIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMS4zMzMwMSA2LjMzMzI1SDI1LjMzMyIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTMuMzMzIDMwLjMzMzNWMjEiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTkuMzMzMDEgMzAuMzMzM0gxNy4zMzMiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg=="); }
+    .servise_item.hotel_roomtypes h4 {
+      padding-left: 50px; }
+  .servise_item.hotel_child {
+    background-position: 1px 11px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMzMzMDEgMjRWMzAuNjY2NyIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMS4zMzMwMSAxOS45OTk5VjE4LjY2NjZDMS4zMzMwMSAxNS43MjEzIDMuNzIxMDEgMTMuMzMzMyA2LjY2NjM0IDEzLjMzMzNDOS42MTE2NyAxMy4zMzMzIDExLjk5OTcgMTUuNzIxMyAxMS45OTk3IDE4LjY2NjZWMTkuOTk5OSIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNNCAzMC42NjY3VjI0IiBzdHJva2U9IiNFRjUzM0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOS45OTk2NyA0LjY2NjU5QzkuOTk5NjcgNi41MDc5MiA4LjUwNzY3IDcuOTk5OTIgNi42NjYzNCA3Ljk5OTkyQzQuODI1MDEgNy45OTk5MiAzLjMzMzAxIDYuNTA3OTIgMy4zMzMwMSA0LjY2NjU5QzMuMzMzMDEgMi44MjUyNSA0LjgyNTAxIDEuMzMzMjUgNi42NjYzNCAxLjMzMzI1QzguNTA3NjcgMS4zMzMyNSA5Ljk5OTY3IDIuODI1MjUgOS45OTk2NyA0LjY2NjU5WiIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjYuNjY2IDI1LjMzMzNWMzAuNjY2NiIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTcuMzMzIDI1LjMzMzNMMTkuMTMxNyAxNy4yMzg2QzE5LjYzODMgMTQuOTU3MyAyMS42NjIzIDEzLjMzMzMgMjMuOTk5NyAxMy4zMzMzQzI2LjMzNyAxMy4zMzMzIDI4LjM2MSAxNC45NTczIDI4Ljg2NzcgMTcuMjM4NkwzMC42NjYzIDI1LjMzMzMiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTIxLjMzMyAzMC42NjY2VjI1LjMzMzMiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNy4zMzI3IDQuNjY2NTlDMjcuMzMyNyA2LjUwNzkyIDI1Ljg0MDcgNy45OTk5MiAyMy45OTkzIDcuOTk5OTJDMjIuMTU4IDcuOTk5OTIgMjAuNjY2IDYuNTA3OTIgMjAuNjY2IDQuNjY2NTlDMjAuNjY2IDIuODI1MjUgMjIuMTU4IDEuMzMzMjUgMjMuOTk5MyAxLjMzMzI1QzI1Ljg0MDcgMS4zMzMyNSAyNy4zMzI3IDIuODI1MjUgMjcuMzMyNyA0LjY2NjU5WiIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K"); }
+    .servise_item.hotel_child h4 {
+      padding-left: 50px; }
+  .servise_item.hotel_mealtypes {
+    background-position: 1px 11px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMzMzMDEgMS4zMzMzN1Y5LjMzMzM3IiBzdHJva2U9IiNFRjUzM0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik00IDEuMzMzMzdWMTJDNCAxMy40NzIgNS4xOTQ2NyAxNC42NjY3IDYuNjY2NjcgMTQuNjY2N1YyOEM2LjY2NjY3IDI5LjQ3MiA3Ljg2MTMzIDMwLjY2NjcgOS4zMzMzMyAzMC42NjY3QzEwLjgwNTMgMzAuNjY2NyAxMiAyOS40NzIgMTIgMjhWMTQuNjY2N0MxMy40NzIgMTQuNjY2NyAxNC42NjY3IDEzLjQ3MiAxNC42NjY3IDEyVjEuMzMzMzciIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMi42NjY3IDI4QzIyLjY2NjcgMjkuNDcyIDIzLjg2MTMgMzAuNjY2NyAyNS4zMzMzIDMwLjY2NjdDMjYuODA1MyAzMC42NjY3IDI4IDI5LjQ3MiAyOCAyOFYxLjMzMzM3QzIzLjU4MjcgMS4zMzMzNyAyMCA0LjkxNjA0IDIwIDkuMzMzMzdWMjBIMjIuNjY2N1YyOFoiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg=="); }
+    .servise_item.hotel_mealtypes h4 {
+      padding-left: 50px; }
+    .servise_item.hotel_mealtypes .desc {
+      padding: 16px 0 0 0;
+      font-weight: 700; }
+      .servise_item.hotel_mealtypes .desc ul {
+        padding-bottom: 16px; }
+        .servise_item.hotel_mealtypes .desc ul li {
+          font-weight: 400; }
+  .servise_item.hotel_territory {
+    background-position: 1px 11px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEuMzMzOTggMjcuODU1NUMyLjgzMzk4IDI5LjMzMDEgNS4wMTY2NSAzMC42NjYxIDguMDAwNjUgMzAuNjY2MUMxNC42NjczIDMwLjY2NjEgMTYuMDAwNyAyNi42NjYxIDIyLjY2NzMgMjYuNjY2MUMyNS43NTEzIDI2LjY2NjEgMjguNTUgMjguMDk0MSAzMC42NjczIDI5LjYyNjEiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMjUuMzMzNFY4LjAwMDA0QzggNC4zMTczNyAxMC45ODUzIDEuMzMzMzcgMTQuNjY2NyAxLjMzMzM3IiBzdHJva2U9IiNFRjUzM0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0yMi42NjcgMjEuMzMzNFY4LjAwMDA0QzIyLjY2NyA0LjMxNzM3IDI1LjY1MjMgMS4zMzMzNyAyOS4zMzM3IDEuMzMzMzciIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTAuNjY2NkgyMi42NjY3IiBzdHJva2U9IiNFRjUzM0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik04IDE4LjY2NjZIMjIuNjY2NyIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K"); }
+    .servise_item.hotel_territory h4 {
+      padding-left: 50px; }
+  .servise_item.hotel_beach {
+    background-position: 1px 11px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDE2VjIxLjMzMzNDMTYgMjEuMzMzMyAxNiAyNi42NjY3IDE4LjY2NjcgMzAuNjY2NyIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYgNC43NTkwM0MxNS4wMzIgMy4yNTUwMyAxMy41MzA3IDIuMDg4MzcgMTEuNjY2NyAxLjU4ODM3QzguNzY1MzMgMC44MTEwMzUgNS44MDQgMS44NTc3IDQgNC4wMjQzNyIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMjguMDAxIDQuMDI0ODZDMjYuMTk1NiAxLjg1ODE5IDIzLjIzNTYgMC44MTE1MjMgMjAuMzMzIDEuNTg4ODZDMTguNDcwMyAyLjA4ODg2IDE2Ljk2OSAzLjI1NTUyIDE2LjAwMSA0Ljc1OTUyIiBzdHJva2U9IiNFRjUzM0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNi4wMDAxIDEwLjY3N0MxNC4wMDU1IDcuNjgxMDQgMTAuMTQ1NSA3LjE5ODM3IDYuNjAwMTMgOC40ODEwNEMyLjQ0NjggOS45ODIzNyAwLjMwNjggMTQuNTQyNCAxLjgxNzQ3IDE4LjY2NjQiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTMwLjE4MjcgMTguNjY2NkMzMS42OTMzIDE0LjU0MjYgMjkuNTUzMyA5Ljk4MTI5IDI1LjQwMTMgOC40Nzk5NUMyMS44NTQ3IDcuMTk3MjkgMTcuOTk0NyA3LjY4MTI5IDE2IDEwLjY3NzMiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTE2LjAwMDUgMTUuNTYxMkMxNC43MzEyIDEzLjY4OTIgMTIuMjc1MiAxMi44MzE5IDEwLjAxNzkgMTMuNjM0NUM3LjM3NjUzIDE0LjU3MTkgNi4wMTM4NyAxNy40MjI1IDYuOTc1MiAxOS45OTk5IiBzdHJva2U9IiNFRjUzM0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0yNS4wMjUzIDIwQzI1Ljk4NjcgMTcuNDIxMyAyNC42MjUzIDE0LjU3MiAyMS45ODI3IDEzLjYzNDdDMTkuNzI1MyAxMi44MzIgMTcuMjY5MyAxMy42ODkzIDE2IDE1LjU2MTMiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg=="); }
+    .servise_item.hotel_beach h4 {
+      padding-left: 50px; }
+  .servise_item.hotel_inroom {
+    background-position: 1px 11px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEuMzMzMDEgMTIuMDAwMUM1LjI3NzAxIDguNjcyMDggMTAuMzc0MyA2LjY2Njc1IDE1LjkzOTcgNi42NjY3NUMyMS41MzE3IDYuNjY2NzUgMjYuNjUxNyA4LjY5MjA4IDMwLjYwNSAxMi4wNTA3IiBzdHJva2U9IiNFRjUzM0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik01LjM1NjQ1IDE3LjMzMzVDOC4xNzY0NSAxNC44NDQyIDExLjg4MTggMTMuMzMzNSAxNS45MzkxIDEzLjMzMzVDMTkuOTk5MSAxMy4zMzM1IDIzLjcwNzEgMTQuODQ1NSAyNi41MjcxIDE3LjMzNzUiIHN0cm9rZT0iI0VGNTMzRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTEwLjYwNTUgMjEuNjczM0MxMi4xMTc1IDIwLjYxODcgMTMuOTU2MSAyMCAxNS45Mzg4IDIwQzE3LjkyMjggMjAgMTkuNzYxNSAyMC42MTg3IDIxLjI3MzUgMjEuNjczMyIgc3Ryb2tlPSIjRUY1MzNGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYgMjUuMzMzNFYyNS4zMjAxIiBzdHJva2U9IiNFRjUzM0YiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo="); }
+    .servise_item.hotel_inroom h4 {
+      padding-left: 50px; }
+  .servise_item:last-child {
+    padding-bottom: 0; }
+
+.review_flex {
+  padding: 24px 0;
+  display: flex; }
+  .review_flex .rev1 {
+    background: #F7F7F7;
+    padding: 24px 24px 24px 16px;
+    border-radius: 8px;
+    width: 25%; }
+    .review_flex .rev1 .rev1__flex {
+      display: flex;
+      align-items: flex-start; }
+      .review_flex .rev1 .rev1__flex .r_user__icon {
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIzQzE4LjAxNzcgMjMgMjMgMTguMDA2OSAyMyAxMkMyMyA1Ljk4MjM2IDE4LjAwNjkgMSAxMS45ODkyIDFDNS45ODIzNiAxIDEgNS45ODIzNiAxIDEyQzEgMTguMDA2OSA1Ljk5MzE1IDIzIDEyIDIzWk0xMiAyMS4xNjY3QzYuOTA5ODIgMjEuMTY2NyAyLjg0NDEyIDE3LjA5MDMgMi44NDQxMiAxMkMyLjg0NDEyIDYuOTA5ODIgNi44OTkwMyAyLjgzMzM0IDExLjk4OTIgMi44MzMzNEMxNy4wNzk1IDIuODMzMzQgMjEuMTY2NyA2LjkwOTgyIDIxLjE2NjcgMTJDMjEuMTY2NyAxNy4wOTAzIDE3LjA5MDMgMjEuMTY2NyAxMiAyMS4xNjY3Wk0xOS4zNzY2IDE5LjEwNjlMMTkuMzQ0MiAxOC45ODgzQzE4LjgxNTcgMTcuNDAzIDE1Ljk2ODYgMTUuNjY2NyAxMiAxNS42NjY3QzguMDQyMTcgMTUuNjY2NyA1LjE5NTEgMTcuNDAzIDQuNjU1ODkgMTguOTc3NUw0LjYyMzU0IDE5LjEwNjlDNi41NjQ3MiAyMS4wMjY1IDkuODk3MDggMjIuMTQ4MSAxMiAyMi4xNDgxQzE0LjExMzggMjIuMTQ4MSAxNy40MTM3IDIxLjAzNzMgMTkuMzc2NiAxOS4xMDY5Wk0xMiAxMy44MzMzQzE0LjA4MTQgMTMuODU1IDE1LjY5OTEgMTIuMDg2MyAxNS42OTkxIDkuNzY3NjZDMTUuNjk5MSA3LjU4OTIzIDE0LjA3MDYgNS43ODgyNCAxMiA1Ljc4ODI0QzkuOTI5NDMgNS43ODgyNCA4LjI5MDIyIDcuNTg5MjMgOC4zMDA5OSA5Ljc2NzY2QzguMzExNzggMTIuMDg2MyA5LjkyOTQzIDEzLjgxMTggMTIgMTMuODMzM1oiIGZpbGw9IiNFRjUzM0YiLz4KPC9zdmc+Cg==");
+        width: 37px;
+        height: 37px; }
+  .review_flex .rev2 {
+    width: 85%; }
+
+.review_name {
+  color: #667085;
+  padding-bottom: 3px; }
+
+.review_content {
+  line-height: 1.4em;
+  font-size: 15px;
+  padding: 24px; }
+
+.review_traveltime {
+  padding-bottom: 10px;
+  font-size: 13px; }
+
+.review_rate {
+  padding-bottom: 3px; }
+  .review_rate span {
+    position: relative;
+    color: #FCB60B;
+    padding: 0 0 0 13px;
+    background-size: 10px;
+    background-position: 0px 7px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMzciIHZpZXdCb3g9IjAgMCA0MCAzNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDBMMjYuNDY1NiAxMS4xMDA4TDM5LjAyMTEgMTMuODE5N0wzMC40NjE2IDIzLjM5OTJMMzEuNzU1NyAzNi4xODAzTDIwIDMxTDguMjQ0MyAzNi4xODAzTDkuNTM4MzggMjMuMzk5MkwwLjk3ODg3IDEzLjgxOTdMMTMuNTM0NCAxMS4xMDA4TDIwIDBaIiBmaWxsPSIjRkNCNjBCIi8+Cjwvc3ZnPgo="); }
+
+#getHotelMap #JFormFieldMap {
+  width: 100%;
+  height: 400px;
+  background-color: #e8f0fe;
+  border-radius: 12px;
+  position: relative; }
+
+/*# sourceMappingURL=fullpage_hotel.css.map */

@@ -1,0 +1,759 @@
+[
+  {
+    "id": "53",
+    "name": "Абакан",
+    "namefrom": "Абакана",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "74",
+    "name": "Актау",
+    "namefrom": "Актау",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "73",
+    "name": "Актобе",
+    "namefrom": "Актобе",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "60",
+    "name": "Алматы",
+    "namefrom": "Алматы",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "63",
+    "name": "Анапа",
+    "namefrom": "Анапы",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "29",
+    "name": "Архангельск",
+    "namefrom": "Архангельска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "59",
+    "name": "Астана",
+    "namefrom": "Астаны",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "40",
+    "name": "Астрахань",
+    "namefrom": "Астрахани",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "75",
+    "name": "Атырау",
+    "namefrom": "Атырау",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "109",
+    "name": "Баку",
+    "namefrom": "Баку",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "25",
+    "name": "Барнаул",
+    "namefrom": "Барнаула",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "99",
+    "name": "Без перелета",
+    "namefrom": "Без перелета",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "32",
+    "name": "Белгород",
+    "namefrom": "Белгорода",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "80",
+    "name": "Бишкек",
+    "namefrom": "Бишкека",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "36",
+    "name": "Благовещенск",
+    "namefrom": "Благовещенска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "45",
+    "name": "Братск",
+    "namefrom": "Братска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "38",
+    "name": "Брянск",
+    "namefrom": "Брянска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "126",
+    "name": "Бухара",
+    "namefrom": "Бухары",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "108",
+    "name": "Варшава",
+    "namefrom": "Варшавы",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "72",
+    "name": "Вильнюс",
+    "namefrom": "Вильнюса",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "23",
+    "name": "Владивосток",
+    "namefrom": "Владивостока",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "46",
+    "name": "Владикавказ",
+    "namefrom": "Владикавказа",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "27",
+    "name": "Волгоград",
+    "namefrom": "Волгограда",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "26",
+    "name": "Воронеж",
+    "namefrom": "Воронежа",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "116",
+    "name": "Геленджик",
+    "namefrom": "Геленджика",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "124",
+    "name": "Горно-Алтайск",
+    "namefrom": "Горно-Алтайска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "96",
+    "name": "Грозный",
+    "namefrom": "Грозного",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "3",
+    "name": "Екатеринбург",
+    "namefrom": "Екатеринбурга",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "88",
+    "name": "Запорожье",
+    "namefrom": "Запорожья",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "103",
+    "name": "Иваново",
+    "namefrom": "Иваново",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "64",
+    "name": "Ижевск",
+    "namefrom": "Ижевска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "22",
+    "name": "Иркутск",
+    "namefrom": "Иркутска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "10",
+    "name": "Казань",
+    "namefrom": "Казани",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "17",
+    "name": "Калининград",
+    "namefrom": "Калининграда",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "95",
+    "name": "Калуга",
+    "namefrom": "Калуги",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "76",
+    "name": "Караганды",
+    "namefrom": "Караганды",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "114",
+    "name": "Катовице",
+    "namefrom": "Катовице",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "107",
+    "name": "Каунас",
+    "namefrom": "Каунаса",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "15",
+    "name": "Кемерово",
+    "namefrom": "Кемерово",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "58",
+    "name": "Киев",
+    "namefrom": "Киева",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "104",
+    "name": "Киров",
+    "namefrom": "Кирова",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "122",
+    "name": "Кишинев",
+    "namefrom": "Кишинева",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "68",
+    "name": "Костанай",
+    "namefrom": "Костаная",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "11",
+    "name": "Краснодар",
+    "namefrom": "Краснодара",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "12",
+    "name": "Красноярск",
+    "namefrom": "Красноярска",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "119",
+    "name": "Курган",
+    "namefrom": "Кургана",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "47",
+    "name": "Курск",
+    "namefrom": "Курска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "77",
+    "name": "Кызылорда",
+    "namefrom": "Кызылорды",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "115",
+    "name": "Липецк",
+    "namefrom": "Липецка",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "91",
+    "name": "Львов",
+    "namefrom": "Львова",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "48",
+    "name": "Магнитогорск",
+    "namefrom": "Магнитогорска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "94",
+    "name": "Махачкала",
+    "namefrom": "Махачкалы",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "39",
+    "name": "Мин.Воды",
+    "namefrom": "Минеральных Вод",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "57",
+    "name": "Минск",
+    "namefrom": "Минска",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "1",
+    "name": "Москва",
+    "namefrom": "Москвы",
+    "popular": true,
+    "active": true,
+    "default": true
+  },
+  {
+    "id": "30",
+    "name": "Мурманск",
+    "namefrom": "Мурманска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "8",
+    "name": "Н.Новгород",
+    "namefrom": "Н.Новгорода",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "54",
+    "name": "Нальчик",
+    "namefrom": "Нальчика",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "34",
+    "name": "Нижневартовск",
+    "namefrom": "Нижневартовска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "19",
+    "name": "Нижнекамск",
+    "namefrom": "Нижнекамска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "16",
+    "name": "Новокузнецк",
+    "namefrom": "Новокузнецка",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "9",
+    "name": "Новосибирск",
+    "namefrom": "Новосибирска",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "67",
+    "name": "Новый Уренгой",
+    "namefrom": "Нового Уренгоя",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "123",
+    "name": "Ноябрьск",
+    "namefrom": "Ноябрьска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "93",
+    "name": "Одесса",
+    "namefrom": "Одессы",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "21",
+    "name": "Омск",
+    "namefrom": "Омска",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "28",
+    "name": "Оренбург",
+    "namefrom": "Оренбурга",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "49",
+    "name": "Орск",
+    "namefrom": "Орска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "43",
+    "name": "П.Камчатский",
+    "namefrom": "П.Камчатского",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "66",
+    "name": "Павлодар",
+    "namefrom": "Павлодара",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "65",
+    "name": "Пенза",
+    "namefrom": "Пензы",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "2",
+    "name": "Пермь",
+    "namefrom": "Перми",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "117",
+    "name": "Петрозаводск",
+    "namefrom": "Петрозаводска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "118",
+    "name": "Псков",
+    "namefrom": "Пскова",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "81",
+    "name": "Рига",
+    "namefrom": "Риги",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "18",
+    "name": "Ростов-на-Дону",
+    "namefrom": "Ростова-на-Дону",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "5",
+    "name": "Санкт-Петербург",
+    "namefrom": "Санкт-Петербурга",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "7",
+    "name": "Самара",
+    "namefrom": "Самары",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "125",
+    "name": "Самарканд",
+    "namefrom": "Самарканда",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "101",
+    "name": "Саранск",
+    "namefrom": "Саранска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "31",
+    "name": "Саратов",
+    "namefrom": "Саратова",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "121",
+    "name": "Семей",
+    "namefrom": "Семея",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "56",
+    "name": "Сочи",
+    "namefrom": "Сочи",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "55",
+    "name": "Ставрополь",
+    "namefrom": "Ставрополя",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "13",
+    "name": "Сургут",
+    "namefrom": "Сургута",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "41",
+    "name": "Сыктывкар",
+    "namefrom": "Сыктывкара",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "111",
+    "name": "Таллин",
+    "namefrom": "Таллина",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "97",
+    "name": "Тараз",
+    "namefrom": "Тараза",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "106",
+    "name": "Ташкент",
+    "namefrom": "Ташкента",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "52",
+    "name": "Томск",
+    "namefrom": "Томска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "120",
+    "name": "Туркестан",
+    "namefrom": "Туркестана",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "14",
+    "name": "Тюмень",
+    "namefrom": "Тюмени",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "42",
+    "name": "Улан-Удэ",
+    "namefrom": "Улан-Удэ",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "50",
+    "name": "Ульяновск",
+    "namefrom": "Ульяновска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "84",
+    "name": "Уральск",
+    "namefrom": "Уральска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "78",
+    "name": "Усть-Каменогорск",
+    "namefrom": "Усть-Каменогорска",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "4",
+    "name": "Уфа",
+    "namefrom": "Уфы",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "20",
+    "name": "Хабаровск",
+    "namefrom": "Хабаровска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "35",
+    "name": "Ханты-Мансийск",
+    "namefrom": "Ханты-Мансийска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "33",
+    "name": "Харьков",
+    "namefrom": "Харькова",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "51",
+    "name": "Чебоксары",
+    "namefrom": "Чебоксар",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "6",
+    "name": "Челябинск",
+    "namefrom": "Челябинска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "102",
+    "name": "Череповец",
+    "namefrom": "Череповца",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "44",
+    "name": "Чита",
+    "namefrom": "Читы",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "79",
+    "name": "Шымкент",
+    "namefrom": "Шымкента",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "24",
+    "name": "Ю.Сахалинск",
+    "namefrom": "Ю.Сахалинска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "37",
+    "name": "Якутск",
+    "namefrom": "Якутска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "85",
+    "name": "Ярославль",
+    "namefrom": "Ярославля",
+    "popular": false,
+    "active": true
+  }
+]

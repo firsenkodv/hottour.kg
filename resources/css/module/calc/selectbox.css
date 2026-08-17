@@ -1,0 +1,397 @@
+.mod_axeld_credit {
+    max-width: 800px;
+    position: relative;
+}
+
+.mod_axeld_credit .axeld_button {
+    cursor: pointer;
+}
+
+div.selectBox {
+    width: 100%;
+    max-width: 800px;
+    position: absolute;
+    height: 50px;
+    border-radius: 3px;
+    border: solid 1px #E0E0E0;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .3s;
+}
+
+div.selectBox p.valueTag {
+    padding: 0 15px;
+    cursor: pointer;
+    transition: .2s;
+    height: 50px;
+    LINE-HEIGHT: 50PX;
+    BOX-SIZING: border-box;
+    z-index: 10;
+    position: relative;
+}
+
+div.selectBox > img.arrow {
+    position: absolute;
+    right: 0;
+    width: 43px;
+    top: 6px;
+    padding: 15px;
+}
+
+/*
+        для пользователей Safari, Chrome и Opera приятный бонус — стилизованный скролл-бар.
+*/
+.selectMenuBox::-webkit-scrollbar {
+    background: transparent;
+    width: 0.5em;
+    position: absolute;
+}
+
+.selectMenuBox::-webkit-scrollbar-track {
+    background: transparent;
+    position: absolute;
+    z-index: -2;
+}
+
+.selectMenuBox::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background: #888;
+}
+
+ul.selectMenuBox {
+    background: #fff;
+    transition: .3s;
+    width: 100%;
+    height: 184px;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+    position: absolute;
+    margin-top: 00px;
+    display: block;
+
+}
+
+ul.selectMenuBox > li {
+    display: block;
+    padding: 10px;
+    border-radius: 00px;
+    cursor: pointer;
+}
+
+ul.selectMenuBox > li.option {
+    color: gray;
+    padding: 10px;
+
+}
+
+ul.selectMenuBox > li.option:hover,
+ul.selectMenuBox li.active {
+    color: #333;
+    background: #e1e1e1;
+    transition: .2s;
+}
+
+
+.mod_axeld_credit_calculator__flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+}
+
+.m_c__c_50 {
+    width: 50%;
+    padding: 0 20px 0 0;
+    position: relative;
+}
+
+.mod_axeld_credit_calculator__block {
+    padding: 15px 0;
+    position: relative;
+    min-height: 70px;
+}
+
+.mod_axeld_credit_calculator__selectBox___block {
+    padding-right: 0;
+}
+
+.mod_axeld_credit_calculator__slider {
+    height: 5px !important;
+    border: none !important;
+    background: #00A357 !important;
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+}
+
+.mod_axeld_credit_calculator__slider .ui-state-default {
+    border-radius: 50%;
+    color: #F7931E;
+    background: #F7931E !important;
+    border: 1px solid #F7931E !important;
+    top: -8px !important;
+}
+
+.mod_c_c_val {
+    border: none;
+    height: 46px;
+    position: relative;
+    top: -2px;
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+.mod_axeld_credit_calculator__result {
+    display: none;
+    max-width: 800px;
+}
+
+.mod_axeld_credit_calculator__result h2 {
+    font-size: 24px;
+    line-height: 1.3em;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 11px;
+}
+
+.mod_axeld_credit_calculator__result {
+    padding: 10px 0;
+}
+
+.mod_axeld_credit_calculator__result___wrapp {
+    padding: 10px 0;
+}
+
+.mod_axeld_progressbar {
+    height: 18px !important;
+    border: 1px solid #fff !important;
+    background: #F7931E !important;
+    border-radius: 7px !important;
+}
+
+.ui-progressbar .ui-progressbar-value {
+    margin: 0 !important;
+    background: #00A357 !important;
+    border: none !important;
+}
+
+.mod_axeld_credit_calculator__result___items {
+    padding: 10px 0;
+}
+
+.mod_axeld_credit_calculator__result___item {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+
+}
+
+
+.mod_axeld_credit_calculator__result___item .m_a_c__label {
+    color: #6F7893;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    line-height: 100%;
+
+
+}
+
+.m_a_c__result {
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.mod_axeld_credit__labels {
+
+    margin: 0px 0 14px 0;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    position: relative;
+    font-size: 15px;
+}
+
+.mod_axeld_credit__label {
+
+    display: flex;
+    align-items: center;
+    height: 30px;
+    position: relative;
+    font-size: 15px;
+    margin: 0 16px 0 0;
+}
+
+
+.m_a_orange {
+
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #F7931E;
+    margin: 0 5px 0 0;
+}
+
+
+.m_a_green {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #00A357;
+    margin: 0 5px 0 0;
+
+}
+
+.mod_axeld_credit__hr {
+    margin: 30px 0 35px 0;
+}
+
+.mod_axeld_credit_error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+
+.mod_axeld_credit_calculator__h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 32px;
+    position: relative;
+}
+
+
+.mod_axeld_credit__redirect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 29px !important;
+    padding: 0 10px !important;
+    text-decoration: none;
+    font-weight: 100 !important;
+    position: relative;
+    width: auto !important;
+    font-size: 14px !important;
+    border: 1px solid #EF533F !important;
+    line-height: normal !important;
+    border-radius: 4px !important;
+
+}
+
+.mod_axeld_credit__redirect:hover {
+
+    height: 29px;
+    padding: 0 10px;
+    text-decoration: none;
+    font-weight: 100;
+    position: relative;
+}
+
+
+.mod_axeld_credit__redirect img {
+    transition: 0.2s;
+}
+
+.mod_axeld_credit__redirect:hover img {
+
+    transform: rotate(180deg);
+}
+
+/* классы на форму */
+
+.mod_axeld_credit_calculator__axeld_form {
+    padding: 20px 0 0 0;
+}
+
+.mod_axeld_credit_calculator__axeld_form .F_form_fly {
+    width: 100% !important;
+    box-shadow: none !important;
+    padding: 19px 0 !important;
+    border-top: 1px solid #eee;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+.mod_axeld_credit_calculator__axeld_form .F_form_fly .F_button_text {
+    margin: 35px 0 0 0 !important;
+    height: 50px !important;
+}
+
+.mod_axeld_credit_calculator__axeld_form .F_form_fly .F_b {
+    top: 0;
+    left: 0;
+    border-radius: 0;
+}
+
+.mod_axeld_credit_calculator__axeld_form .F_form_fly .cssload-thecube {
+
+    left: 43%;
+}
+
+.mod_axeld_credit_calculator__axeld_form .F_form_fly .F_b {
+
+    BACKGROUND: rgba(0, 0, 0, 0);
+}
+
+.mod_axeld_credit_calculator__axeld_form .ic_done {
+    text-align: center;
+    padding: 10px 0 30px 0 !important;
+}
+
+.mod_axeld_credit_calculator__axeld_form .af-message {
+    text-align: center;
+    padding: 19px 0 26px 0 !important;
+}
+
+
+.mod_axeld_cс__bank_wr {
+    border-top: 1px solid #dddddd;
+    padding: 13px 0 10px 0;
+    margin: 17px 0 0 0;
+}
+.mod_axeld_cс__bank {
+    font-size: 20px;
+    line-height: 1.3em;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 10px 0 4px 0;
+    padding: 10px 0 0 0;
+    color: #EF533F;
+
+}
+
+.mod_axeld_cс__country   {
+    font-size: 20px;
+    line-height: 1.3em;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 11px;
+}
+
+
+/* классы на форму */
+
+@media screen and (max-width: 668px) {
+
+    .mod_axeld_credit_calculator__result .mod_axeld_credit__redirect {
+
+        height: 29px !important;
+        font-size: 14px !important;
+    }
+
+    .mod_axeld_credit_calculator__item__price {
+
+        font-size: 30px;
+
+    }
+}
+

@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+// Внешний вид календаря (jquery-date-range-picker) — надстройка над базовым
+// public/css/daterangepicker.css: крупнее шрифты, больше воздуха, брендовые
+// цвета вместо розово-синих дефолтов плагина.
+//
+// Разметка — компонент <x-forms.datepicker>, инициализация — js/datepicker.js.
+//
+// Обёртка body нужна для специфичности: базовый css подключён <link>-ом в конце
+// body и при равных селекторах перебивал бы эти правила (vite-бандл в head).
+
+$color: #282828;
+$colorRed: #EF533F;
+$colorGrey: #667085;
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+body .date-picker-wrapper {
+    @include family;
+    padding: 14px 18px 16px;
+    border: 0;
+    border-radius: 16px;
+    font-size: 14px;
+    color: $color;
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.16);
+
+    // подсказка «Пожалуйста выберите диапазон» в шапке
+    .default-top,
+    .selected-days,
+    .drp_top-bar {
+        font-size: 13px;
+        line-height: 1.4;
+        color: $colorGrey;
+    }
+
+    .month-wrapper {
+        border: 0;
+        padding: 0;
+
+        // месяц просторнее: было 190px
+        table,
+        table.month2 {
+            width: 236px;
+        }
+
+        table .caption {
+            height: 44px;
+
+            .month-name {
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: .4px;
+                color: $color;
+            }
+
+            .next:hover,
+            .prev:hover {
+                background-color: rgba(239, 83, 63, 0.1);
+                border-radius: 6px;
+            }
+        }
+
+        table .week-name {
+            height: 26px;
+            line-height: 26px;
+            font-size: 11px;
+            font-weight: 600;
+            color: $colorGrey;
+        }
+
+        table .day {
+            padding: 9px 0;
+            font-size: 14px;
+            line-height: 1;
+            border-radius: 8px;
+
+            &.toMonth.valid {
+                color: $color;
+            }
+
+            // диапазон между границами — лёгкая брендовая заливка
+            &.checked,
+            &.toMonth.hovering {
+                background-color: rgba(239, 83, 63, 0.12);
+            }
+
+            // сегодня: не синяя заливка, а красная обводка
+            &.real-today {
+                background: none;
+                box-shadow: inset 0 0 0 1px $colorRed;
+                color: $color !important;
+
+                &.checked,
+                &.hovering {
+                    background-color: rgba(239, 83, 63, 0.12);
+                }
+            }
+        }
+    }
+
+    // границы выбранного диапазона (цвет задаёт базовый css — #EF533F)
+    .first-date-selected,
+    .last-date-selected {
+        border-radius: 8px;
+    }
+
+    .footer {
+        font-size: 12px;
+        padding-top: 6px;
+    }
+
+    .date-range-length-tip {
+        background-color: $colorRed;
+        color: #fff;
+        border-radius: 6px;
+        font-size: 12px;
+        padding: 3px 8px;
+
+        &:after {
+            border-top-color: $colorRed;
+        }
+    }
+
+    // выбор месяца/года (режим birthdate в кабинете)
+    .select-wrapper {
+        border-radius: 6px;
+
+        select {
+            font-size: 13px;
+        }
+    }
+}
+
+// два месяца рядом стали шире — на узких экранах плагин сам
+// переключается в одномесячный режим, здесь только страховка
+@media (max-width: 560px) {
+    body .date-picker-wrapper .month-wrapper table,
+    .date-picker-wrapper .month-wrapper table.month2 {
+        width: 220px;
+    }
+}

@@ -1,0 +1,60 @@
+.r_sw {
+  padding: 16px 0; }
+  .r_sw .r_sw__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 24px; }
+    .r_sw .r_sw__flex .r_sw__left .h2 {
+      font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.2em; }
+    .r_sw .r_sw__flex .r_sw__rihgt {
+      display: flex;
+      justify-content: flex-end;
+      position: relative; }
+  .r_sw .swiper_responce {
+    width: 100%; }
+
+.responce_item .responce_item__link {
+  position: relative;
+  display: block;
+  text-decoration: none; }
+  .responce_item .responce_item__link .responce_item__circle {
+    right: 20px;
+    top: 20px;
+    z-index: 10; }
+  .responce_item .responce_item__link .responce_item__img {
+    border-radius: 8px;
+    position: relative;
+    top: 0; }
+  .responce_item .responce_item__link .responce_item__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #282828;
+    text-decoration: none;
+    padding: 8px 0  0 0; }
+  .responce_item .responce_item__link .responce_item__desc {
+    font-size: 15px;
+    color: #282828;
+    text-decoration: none; }
+.responce_item .responce_item__link:hover {
+  position: relative;
+  display: block; }
+  .responce_item .responce_item__link:hover .responce_item__circle span {
+    border-left: 11px solid #00AFEF; }
+  .responce_item .responce_item__link:hover .responce_item__title {
+    color: #EF533F; }
+.responce_item .responce_item__circle {
+  right: 20px;
+  top: 20px;
+  z-index: 10; }
+
+.slick_slider__responcescarusel .slick-slide {
+  margin-right: 30px; }
+
+/*# sourceMappingURL=response.css.map */

@@ -1,0 +1,98 @@
+body .date-picker-wrapper {
+  font-family: "Source Sans Pro", "Arial Narrow", Arial, Helvetica, sans-serif;
+  padding: 14px 18px 16px;
+  border: 0;
+  border-radius: 16px;
+  font-size: 14px;
+  color: #282828;
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.16);
+}
+body .date-picker-wrapper .default-top,
+body .date-picker-wrapper .selected-days,
+body .date-picker-wrapper .drp_top-bar {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #667085;
+}
+body .date-picker-wrapper .month-wrapper {
+  border: 0;
+  padding: 0;
+}
+body .date-picker-wrapper .month-wrapper table,
+body .date-picker-wrapper .month-wrapper table.month2 {
+  width: 236px;
+}
+body .date-picker-wrapper .month-wrapper table .caption {
+  height: 44px;
+}
+body .date-picker-wrapper .month-wrapper table .caption .month-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #282828;
+}
+body .date-picker-wrapper .month-wrapper table .caption .next:hover,
+body .date-picker-wrapper .month-wrapper table .caption .prev:hover {
+  background-color: rgba(239, 83, 63, 0.1);
+  border-radius: 6px;
+}
+body .date-picker-wrapper .month-wrapper table .week-name {
+  height: 26px;
+  line-height: 26px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #667085;
+}
+body .date-picker-wrapper .month-wrapper table .day {
+  padding: 9px 0;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 8px;
+}
+body .date-picker-wrapper .month-wrapper table .day.toMonth.valid {
+  color: #282828;
+}
+body .date-picker-wrapper .month-wrapper table .day.checked, body .date-picker-wrapper .month-wrapper table .day.toMonth.hovering {
+  background-color: rgba(239, 83, 63, 0.12);
+}
+body .date-picker-wrapper .month-wrapper table .day.real-today {
+  background: none;
+  box-shadow: inset 0 0 0 1px #EF533F;
+  color: #282828 !important;
+}
+body .date-picker-wrapper .month-wrapper table .day.real-today.checked, body .date-picker-wrapper .month-wrapper table .day.real-today.hovering {
+  background-color: rgba(239, 83, 63, 0.12);
+}
+body .date-picker-wrapper .first-date-selected,
+body .date-picker-wrapper .last-date-selected {
+  border-radius: 8px;
+}
+body .date-picker-wrapper .footer {
+  font-size: 12px;
+  padding-top: 6px;
+}
+body .date-picker-wrapper .date-range-length-tip {
+  background-color: #EF533F;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 3px 8px;
+}
+body .date-picker-wrapper .date-range-length-tip:after {
+  border-top-color: #EF533F;
+}
+body .date-picker-wrapper .select-wrapper {
+  border-radius: 6px;
+}
+body .date-picker-wrapper .select-wrapper select {
+  font-size: 13px;
+}
+
+@media (max-width: 560px) {
+  body .date-picker-wrapper .month-wrapper table,
+  .date-picker-wrapper .month-wrapper table.month2 {
+    width: 220px;
+  }
+}
+
+/*# sourceMappingURL=datepicker.css.map */

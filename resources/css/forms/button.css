@@ -1,0 +1,55 @@
+@charset "UTF-8";
+.button {
+  height: 46px;
+  border: 1px solid #EF533F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  background: #EF533F;
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none; }
+  .button:hover {
+    border: 1px solid #EF533F;
+    color: #EF533F;
+    background: #fff; }
+
+.button_big {
+  height: 54px; }
+
+.button_normal {
+  height: 46px; }
+
+.button_mini {
+  height: 36px;
+  font-size: 15px; }
+
+/* цвет */
+.button_green {
+  border: 1px solid #00A357;
+  background: #00A357; }
+  .button_green:hover {
+    border: 1px solid #00A357;
+    color: #00A357;
+    background: #fff; }
+
+@media (max-width: 793px) {
+  .button_big {
+    height: 46px;
+    font-size: 16px; }
+
+  .button_normal {
+    height: 36px;
+    font-size: 15px; }
+
+  .button_mini {
+    height: 36px; } }
+
+/*# sourceMappingURL=button.css.map */

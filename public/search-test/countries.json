@@ -1,0 +1,471 @@
+[
+  {
+    "id": "46",
+    "name": "Абхазия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "31",
+    "name": "Австрия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "55",
+    "name": "Азербайджан",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "71",
+    "name": "Албания",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "17",
+    "name": "Андорра",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "88",
+    "name": "Аргентина",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "53",
+    "name": "Армения",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "59",
+    "name": "Бахрейн",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "57",
+    "name": "Беларусь",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "74",
+    "name": "Бельгия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "20",
+    "name": "Болгария",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "39",
+    "name": "Бразилия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "44",
+    "name": "Великобритания",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "37",
+    "name": "Венгрия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "90",
+    "name": "Венесуэла",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "16",
+    "name": "Вьетнам",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "6",
+    "name": "Греция",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "54",
+    "name": "Грузия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "75",
+    "name": "Дания",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "11",
+    "name": "Доминикана",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "1",
+    "name": "Египет",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "30",
+    "name": "Израиль",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "3",
+    "name": "Индия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "7",
+    "name": "Индонезия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "29",
+    "name": "Иордания",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "92",
+    "name": "Иран",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "77",
+    "name": "Исландия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "14",
+    "name": "Испания",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "24",
+    "name": "Италия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "78",
+    "name": "Казахстан",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "40",
+    "name": "Камбоджа",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "79",
+    "name": "Катар",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "51",
+    "name": "Кения",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "15",
+    "name": "Кипр",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "60",
+    "name": "Киргизия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "13",
+    "name": "Китай",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "10",
+    "name": "Куба",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "80",
+    "name": "Ливан",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "63",
+    "name": "Литва",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "27",
+    "name": "Маврикий",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "36",
+    "name": "Малайзия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "8",
+    "name": "Мальдивы",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "50",
+    "name": "Мальта",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "23",
+    "name": "Марокко",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "18",
+    "name": "Мексика",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "81",
+    "name": "Мьянма",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "82",
+    "name": "Непал",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "45",
+    "name": "Нидерланды",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "83",
+    "name": "Норвегия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "9",
+    "name": "ОАЭ",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "64",
+    "name": "Оман",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "87",
+    "name": "Панама",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "35",
+    "name": "Португалия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "47",
+    "name": "Россия",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "93",
+    "name": "Саудовская Аравия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "28",
+    "name": "Сейшелы",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "58",
+    "name": "Сербия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "25",
+    "name": "Сингапур",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "42",
+    "name": "Словакия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "43",
+    "name": "Словения",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "2",
+    "name": "Таиланд",
+    "popular": true,
+    "active": true,
+    "default": true
+  },
+  {
+    "id": "41",
+    "name": "Танзания",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "5",
+    "name": "Тунис",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "4",
+    "name": "Турция",
+    "popular": true,
+    "active": true
+  },
+  {
+    "id": "56",
+    "name": "Узбекистан",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "26",
+    "name": "Филиппины",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "34",
+    "name": "Финляндия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "32",
+    "name": "Франция",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "22",
+    "name": "Хорватия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "21",
+    "name": "Черногория",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "19",
+    "name": "Чехия",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "52",
+    "name": "Швейцария",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "84",
+    "name": "Швеция",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "12",
+    "name": "Шри-Ланка",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "69",
+    "name": "Эстония",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "85",
+    "name": "ЮАР",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "70",
+    "name": "Южная Корея",
+    "popular": false,
+    "active": false
+  },
+  {
+    "id": "49",
+    "name": "Япония",
+    "popular": false,
+    "active": true
+  }
+]

@@ -1,0 +1,121 @@
+[
+  {
+    "id": "74",
+    "name": "Актау",
+    "namefrom": "Актау",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "73",
+    "name": "Актобе",
+    "namefrom": "Актобе",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "60",
+    "name": "Алматы",
+    "namefrom": "Алматы",
+    "popular": true,
+    "active": true,
+    "default": true
+
+  },
+
+  {
+    "id": "59",
+    "name": "Астана",
+    "namefrom": "Астаны",
+    "popular": true,
+    "active": true
+  },
+
+  {
+    "id": "75",
+    "name": "Атырау",
+    "namefrom": "Атырау",
+    "popular": false,
+    "active": true
+  },
+
+  {
+    "id": "80",
+    "name": "Бишкек",
+    "namefrom": "Бишкека",
+    "popular": false,
+    "active": true
+  },
+
+  {
+    "id": "126",
+    "name": "Бухара",
+    "namefrom": "Бухары",
+    "popular": false,
+    "active": true
+  },
+
+  {
+    "id": "76",
+    "name": "Караганды",
+    "namefrom": "Караганды",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "77",
+    "name": "Кызылорда",
+    "namefrom": "Кызылорды",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "66",
+    "name": "Павлодар",
+    "namefrom": "Павлодара",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "125",
+    "name": "Самарканд",
+    "namefrom": "Самарканда",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "97",
+    "name": "Тараз",
+    "namefrom": "Тараза",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "106",
+    "name": "Ташкент",
+    "namefrom": "Ташкента",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "120",
+    "name": "Туркестан",
+    "namefrom": "Туркестана",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "78",
+    "name": "Усть-Каменогорск",
+    "namefrom": "Усть-Каменогорска",
+    "popular": false,
+    "active": true
+  },
+  {
+    "id": "79",
+    "name": "Шымкент",
+    "namefrom": "Шымкента",
+    "popular": false,
+    "active": true
+  }
+]

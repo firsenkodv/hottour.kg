@@ -1,0 +1,198 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin family_Philosopher {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+._ssurvey {
+    padding: 30px 0 8px 0;
+}
+.survey__flex {
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 0 14px #0000001f;
+    max-width: 651px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+    .survey__sLeft {
+        width: 50%;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 20px;
+        font-weight: 600;
+
+    }
+    .survey__sright {
+        width: 50%;
+        min-height: 40px;
+        .sright__flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-height: 40px;
+        }
+        .sright__stars {
+            padding-right: 20px;
+        }
+        .s_stars__label {
+            display:none ;
+        }
+    }
+}
+.sright__button {
+    .button {
+        padding: 0 20px;
+    }
+}
+
+.survey__c_responce {
+    padding: 36px 0 10px 0;
+
+    .survey__checkbox {
+        display: flex;
+        height: 26px;
+        min-height: 26px;
+        position: relative;
+        margin: 0 0 20px 0;
+        .survey__checkbox_checkbox {
+            height: 26px;
+            min-height: 26px;
+            position: relative;
+            label {
+                cursor: pointer;
+            }
+            .checkbox-flip + label span:before, .checkbox-flip + label span:after {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .survey__checkbox_text {
+            height: 26px;
+            min-height: 26px;
+            position: relative;
+            padding: 0 10px 0 18px;
+            color: $colorGrey;
+            span {
+                position: relative;
+                top: 2px;
+            }
+        }
+    }
+}
+
+._ssurvey_user {
+
+}
+.survey_user__flex {
+    border-radius: 12px;
+    background: #fff;
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    min-height: 40px;
+    .survey_user__sLeft {
+        width: 100%;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-weight: 600;
+
+    }
+    .survey_user__sright {
+        width: 100%;
+        min-height: 40px;
+        .sright_user__flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-height: 40px;
+        }
+        .sright_user__stars {
+            padding-right: 20px;
+        }
+        .s_stars__label {
+            display:none ;
+        }
+        .rating-area_survey {
+            overflow: hidden;
+            width: 144px;
+            margin: 0;
+            padding: 0;
+        }
+      .button {
+            padding: 0 20px;
+        }
+    }
+}
+
+.starscrin {
+    padding: 20px 0;
+}
+.starscrin_li {
+    height: 32px;
+    display: flex;
+    .starscrin_li_stars {
+        height: 32px;
+        .rating-area_survey {
+         width: 144px;
+        }
+    }
+    .starscrin_li_responce {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        padding: 0 0 0 10px;
+    }
+
+}
+
+.morescrin {
+    padding: 20px 0 0 0;
+
+    .morescrin_li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        .morescrin_li_text {
+            height: 32px;
+
+
+        }
+        .morescrin_li_score {
+            height: 32px;
+            font-weight: 600;
+            padding: 0 0 0 10px;
+        }
+
+    }
+
+}

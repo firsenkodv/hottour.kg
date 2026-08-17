@@ -1,0 +1,177 @@
+            <div class="text_input pad_t16">
+                        <div class="c__ava_flex">
+                            <div class="c__ava">
+                                @if($user->avatar)
+<div class="avatar_img" style="background: url('{{ Storage::disk('user')->url($user->avatar) }}')">
+
+</div>                                @else
+                                    <img alt="Кабинет" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOCAwQzguMDU5NSAwIDAgOC4wNTk1IDAgMThDMCAyNy45NDA1IDguMDU5NSAzNiAxOCAzNkMyNy45NDA1IDM2IDM2IDI3Ljk0MDUgMzYgMThDMzYgOC4wNTk1IDI3Ljk0MDUgMCAxOCAwWk0xOCA3LjUwMDA3QzIxLjcyMTUgNy41MDAwNyAyNC43NSAxMC41Mjg2IDI0Ljc1IDE0LjI1MDFDMjQuNzUgMTcuOTcxNiAyMS43MjE1IDIxLjAwMDEgMTggMjEuMDAwMUMxNC4yNzg1IDIxLjAwMDEgMTEuMjUgMTcuOTcxNiAxMS4yNSAxNC4yNTAxQzExLjI1IDEwLjUyODYgMTQuMjc4NSA3LjUwMDA3IDE4IDcuNTAwMDdaTTcuOTQ1NTEgMjkuMDk4NEMxMC42MDk1IDMxLjUxNDkgMTQuMTMgMzIuOTk5OSAxOCAzMi45OTk5QzIxLjg3IDMyLjk5OTkgMjUuMzkwNSAzMS41MTQ5IDI4LjA1NDUgMjkuMDk4NEMyNi43ODU1IDI2LjE2MTQgMjIuNzc2IDIzLjk5OTkgMTggMjMuOTk5OUMxMy4yMjQgMjMuOTk5OSA5LjIxNDUxIDI2LjE2MTQgNy45NDU1MSAyOS4wOTg0WiIgZmlsbD0iI0UwRTBFMCIvPgo8L3N2Zz4K" width="36" height="36" loading="lazy">
+                                @endif
+
+                            </div>
+                            <x-forms.file
+                                accept=".jpg, .jpeg, .png, .csv, .gif"
+                                name="import_file"
+                            >
+                                <span class="input-file-btn">Аватар профиля</span>
+                                <span class="input-file-text">Max 8Mb</span>
+                            </x-forms.file>
+                        </div>
+                    </div>
+
+                    <div class="text_input pad_t8_important">
+
+                        @if($user->birthdate)
+                            <div class="birthdate">
+                                {{ __('Дата рождения') }}
+
+                                <div class="birthdate_pic">
+                                    <input type="text" name="birthdate" class="datepicker-birthdate" value="{{ $user->birthdate }}" />
+                                    <a href="javascript:void(0);"  class="datepicker-birthdate_result">{{ rusdate3($user->birthdate) }}</a>
+                                </div>
+                            </div>
+                        @else
+                            <div class="birthdate">
+                                {{ __('Дата рождения') }}
+
+                                <a href="javascript:void(0);"  class="datepicker-birthdate">{{ __('Добавить') }}</a>
+                            </div>
+                        @endif
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <x-forms.auth-form
+                        title=""
+                        subtitle=""
+                        action="{{ route('setting.password.handel') }}"
+                        method="POST"
+                        enctype=""
+                    >
+                    <div class="c__title_subtitle">
+                        <h3 class="F_h1">{{ __('Изменить пароль') }}</h3>
+                        <div class="F_h2 pad_t5"><span>{{__('Пароль минимум из пяти символов.')}}</span></div>
+                    </div>
+
+                        <div class="text_input">
+                            <x-forms.text-input_fromLabel
+                                type="password"
+                                id="registerPassword"
+                                name="password"
+                                placeholder="Пароль"
+                                required="true"
+                                class="input password"
+                                :isError="$errors->has('password')"
+                            />
+                            <x-forms.error class="error_password"/>
+
+                        </div>
+
+                        <div class="text_input">
+                            <x-forms.text-input_fromLabel
+                                type="password"
+                                id="registerPassword_confirmation"
+                                name="password_confirmation"
+                                placeholder="Повторите пароль"
+                                required="true"
+                                class="input password"
+                                :isError="$errors->has('password')"
+                            />
+                            <x-forms.error class="error_password"/>
+
+                        </div>
+
+                        <div class="slotButtons slotButtons__right pad_t15">
+                            <div class=" text_input w_45">
+                                <input type="hidden" value="{{ $user->id  }}" name="id">
+                                <x-forms.primary-button>
+                                    {{ __('Изменить пароль') }}
+                                </x-forms.primary-button>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                    <x-forms.auth-form
+                        title=""
+                        subtitle=""
+                        action="{{ route('setting.password.handel') }}"
+                        method="POST"
+                        enctype=""
+                    >
+                    <div class="c__title_subtitle">
+                        <h3 class="F_h1">{{ __('Изменить пароль') }}</h3>
+                        <div class="F_h2 pad_t5"><span>{{__('Пароль минимум из пяти символов.')}}</span></div>
+                    </div>
+
+                        <div class="text_input">
+                            <x-forms.text-input_fromLabel
+                                type="password"
+                                id="registerPassword"
+                                name="password"
+                                placeholder="Пароль"
+                                required="true"
+                                class="input password"
+                                :isError="$errors->has('password')"
+                            />
+                            <x-forms.error class="error_password"/>
+
+                        </div>
+
+                        <div class="text_input">
+                            <x-forms.text-input_fromLabel
+                                type="password"
+                                id="registerPassword_confirmation"
+                                name="password_confirmation"
+                                placeholder="Повторите пароль"
+                                required="true"
+                                class="input password"
+                                :isError="$errors->has('password')"
+                            />
+                            <x-forms.error class="error_password"/>
+
+                        </div>
+
+                        <div class="slotButtons slotButtons__right pad_t15">
+                            <div class=" text_input w_45">
+                                <input type="hidden" value="{{ $user->id  }}" name="id">
+                                <x-forms.primary-button>
+                                    {{ __('Изменить пароль') }}
+                                </x-forms.primary-button>
+                            </div>
+
+                        </div>
+
+                    </x-forms.auth-form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

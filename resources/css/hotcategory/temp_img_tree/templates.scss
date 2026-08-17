@@ -1,0 +1,138 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+.hbox.temp_img_tree {
+
+
+    .hrow {
+        display: flex;
+        flex-wrap: wrap;
+
+        .hcol {
+            width: 33%;
+            height: auto;
+            margin-right: 3px;
+            padding-bottom: 34px;
+
+            img {
+                border-radius: 12px;
+            }
+
+            a {
+
+                display: block;
+                text-decoration: none;
+
+                h3, h4, h5 {
+                    text-decoration: none;
+                    font-weight: 700;
+                    color: $color;
+                    font-size: 16px;
+                    padding: 9px 4px;
+                }
+
+                div {
+                    text-decoration: none;
+                    font-size: 15px;
+                }
+
+                .hcolImgText__smalltext {
+                    max-height: 100px;
+                    overflow: hidden;
+                    padding: 0 4px;
+                }
+
+            }
+
+            a:hover {
+                text-decoration: none;
+
+                h3, h4, h5 {
+                    text-decoration: none;
+                    color: $colorRed;
+                }
+
+                div {
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+
+        .hcol:nth-child(3n) {
+
+            margin-right: 0;
+
+
+        }
+
+
+    }
+
+    .hcolNoImg__smalltext {
+        padding-right: 15px;
+    }
+
+    &.tour_data__hotels {
+        h3 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 100%;
+
+            text-decoration: none;
+            font-weight: 700;
+            color: #282828;
+            font-size: 16px;
+            padding: 9px 4px;
+
+        }
+      .hot_item__price {
+            width: 45%;
+            position: relative;
+            font-size: 20px;
+            font-weight: 600;
+        }
+       .hot_item__button {
+            position: relative;
+            width: 55%;
+           padding: 7px  20px 0 20px;
+        }
+     .priceold {
+            font-size: 13px;
+            font-weight: 400;
+            position: relative;
+            color: #667085;
+            text-decoration: line-through;
+            top: 3px;
+        }
+        .button_normal {
+            height: 36px;
+            display: flex !important;
+            font-size: 15px !important
+
+        }
+
+    }
+}
+
+.pc_tree {
+
+}
+

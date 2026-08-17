@@ -1,0 +1,9 @@
+.android_ios {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0; }
+  .android_ios a {
+    margin: 0 10px; }
+
+/*# sourceMappingURL=mobile_app.css.map */

@@ -1,0 +1,26 @@
+.quality_servise {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  height: 160px;
+  margin: 0 auto; }
+  .quality_servise .quality_servise__item {
+    width: 170px;
+    height: 160px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center; }
+  .quality_servise .quality_servise__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; }
+  .quality_servise .quality_servise__item_title {
+    padding: 20px 0 0 0; }
+
+/*# sourceMappingURL=quality_servise.css.map */

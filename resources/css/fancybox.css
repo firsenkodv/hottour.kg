@@ -1,0 +1,58 @@
+.fancybox__backdrop {
+  background: #00000080 !important; }
+
+.dialogFancyBox {
+  display: none;
+  width: 600px;
+  padding: 24px !important;
+  border-radius: 24px !important; }
+  .dialogFancyBox .f-button.is-close-btn {
+    top: 14px !important;
+    right: 14px !important;
+    background: #fff !important;
+    border: none !important; }
+    .dialogFancyBox .f-button.is-close-btn svg {
+      color: #667085 !important; }
+  .dialogFancyBox h1 {
+    color: #282828;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.3em;
+    padding: 0 0 10px 0; }
+  .dialogFancyBox h2 {
+    color: #00AFEF;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.3em;
+    padding: 5px 0; }
+  .dialogFancyBox h3 {
+    color: #667085;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3em;
+    padding: 5px 0; }
+  .dialogFancyBox p {
+    line-height: 1.5em;
+    padding: 10px 0; }
+  .dialogFancyBox ul {
+    position: relative;
+    padding: 0 0 0 48px; }
+    .dialogFancyBox ul li {
+      line-height: 1.5em;
+      padding: 4px 0;
+      position: relative; }
+      .dialogFancyBox ul li:before {
+        content: '';
+        width: 20px;
+        height: 3px;
+        background: #00AFEF;
+        position: absolute;
+        top: 16px;
+        left: -33px; }
+  .dialogFancyBox__line {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    margin: 6px 0; }
+
+/*# sourceMappingURL=fancybox.css.map */

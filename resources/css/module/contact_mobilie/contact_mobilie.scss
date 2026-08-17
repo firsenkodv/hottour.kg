@@ -1,0 +1,54 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+.contact_mobilie {
+    padding:24px 16px;
+
+
+
+ a.con_item {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        min-height: 40px;
+     color: $color;
+     font-size: 18px;
+     text-decoration: none;
+     font-weight: 400;
+     padding: 8px 0;
+
+    }
+    .con_item__left {
+        padding-left: 20px;
+    }
+    .con_item__right {
+
+        div {
+            width: 39px !important;
+            height: 39px !important;
+            box-shadow: 0 0 3px 0 #dddddd;
+            background-size: 46%;
+
+        }
+    }
+    .mod_nummem_echo_desktop {
+        display: none;
+    }
+
+}

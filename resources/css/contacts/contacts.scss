@@ -1,0 +1,394 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #29ABE2;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+.catalogContacts {
+
+    .catalogContacts__tabs {
+
+    }
+
+    .contactTabs {
+
+        .contactTabs__top {
+            height: 48px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            margin: 20px 0 0 0;
+
+
+            .contactTabs__tab {
+                padding: 0 1.5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 48px;
+
+                color: $color;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1em;
+                letter-spacing: 0.5px;
+                border-radius: 4px;
+                transition: 0.2s;
+                cursor: pointer;
+
+            }
+
+            .contactTabs__tab.active,
+            .contactTabs__tab:hover {
+                background:rgba(239, 83, 63, 0.08);
+                color: $colorRed;
+
+            }
+
+            .contactTabs__tab:first-child {
+                /*   padding: 0 1.5% 0 0;*/
+            }
+
+            .contactTabs__tab:last-child {
+                /* padding: 0 0 0 1.5%;*/
+            }
+
+        }
+
+        .contactTabs__bottom {
+            padding: 24px 12px;
+            margin-bottom: 30px;
+
+            .contactTabsBody__tab {
+
+                display: none;
+
+                .contact_area {
+
+                    // .contact_area__flex
+                    &__flex {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    // .contact_area__left
+                    &__left {
+                        width: 30%;
+                        padding: 16px 16px 16px 0;
+
+                        .contact_area__label {
+                            padding: 0 0 16px;
+                        }
+
+                    }
+
+                    // .contact_area__center
+                    &__center {
+                        width: 50%;
+                        padding: 16px;
+
+                        .contact_area__label {
+                            padding: 0 0 16px;
+                        }
+
+
+                    }
+
+                    // .contact_area__right
+                    &__right {
+                        width: 20%;
+                        padding: 16px 0 16px 16px;
+
+                        .contact_area__label {
+                            padding: 0 0 16px;
+                        }
+                    }
+
+                    // .contact_area__fsite_social
+                    &__fsite_social {
+                        min-width: 300px;
+                    }
+                }
+
+            }
+
+            .contactTabsBody__tab.active {
+                display: block;
+                width: 100%;
+
+            }
+
+            .property {
+                font-size: 24px;
+                line-height: 1.3em;
+                padding: 5px 0;
+                span {
+                    color: $colorGrey;
+                    font-size: 15px;
+                }
+            }
+
+        }
+    }
+    .contact_label {
+        color: green;
+    }
+}
+
+
+.JFormFieldMap_wrapper {
+    position: relative;
+}
+
+.JFormFieldMap {
+
+    border-top: 5px solid $colorRed;
+
+    h5 {
+        font-size: 22px;
+        color: $colorRed;
+        padding-bottom: 9px;
+        font-weight: 600;
+
+    }
+
+    .jt_ph {
+        padding-bottom: 5px;
+        font-size: 14px;
+        span {
+            color: $colorGrey;
+            font-size: 12px;
+        }
+
+    }
+    .jt_ph__address {
+        padding: 10px 0;
+        font-size: 14px;
+        span {
+            color: $colorGrey;
+            font-size: 12px;
+        }
+
+    }
+}
+
+@media (max-width: 1440px) {
+    .catalogContacts {
+        .contactTabs {
+            .contactTabs__bottom {
+                padding: 24px 12px;
+                margin-bottom: 30px;
+
+                .contactTabsBody__tab {
+
+
+                    .contact_area {
+
+                        // .contact_area__flex
+                        &__flex {
+
+                        }
+
+                        // .contact_area__left
+                        &__left {
+
+
+                        }
+
+                        // .contact_area__center
+                        &__center {
+
+
+                        }
+
+                        // .contact_area__right
+                        &__right {
+                            width: 300px;
+
+                        }
+
+                        // .contact_area__fsite_social
+                        &__fsite_social {
+                            min-width: 300px;
+                        }
+                    }
+
+                }
+
+
+            }
+        }
+    }
+}
+
+@media (max-width: 1310px) {
+    .catalogContacts {
+        .contactTabs {
+            .contactTabs__top {
+                 height: auto;
+                 flex-wrap: wrap;
+
+                .contactTabs__tab {
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .catalogContacts {
+        .contactTabs {
+            .contactTabs__bottom {
+                padding: 24px 12px;
+
+                .contactTabsBody__tab {
+
+
+                    .contact_area {
+
+                        // .contact_area__flex
+                        &__flex {
+
+                        }
+
+                        // .contact_area__left
+                        &__left {
+
+
+                        }
+
+                        // .contact_area__center
+                        &__center {
+
+
+                        }
+
+                        // .contact_area__right
+                        &__right {
+                            width: 300px;
+
+                        }
+
+                        // .contact_area__fsite_social
+                        &__fsite_social {
+                            min-width: 200px;
+                            width: 217px;
+                        }
+                    }
+
+                }
+
+
+            }
+        }
+    }
+}
+
+@media (max-width: 921px) {
+    #JFormFieldMap:after {
+        width: 29px;
+        height: 545px;
+        right: -8px;
+        top: 0;
+        position: absolute;
+        content: "";
+        display: block;
+        background: #f7f7f7;
+        z-index: 100;
+    }
+}
+@media (max-width: 868px) {
+
+    .catalogContacts {
+        .contactTabs {
+            .contactTabs__top {
+                height: auto;
+                min-height: 48px;
+                flex-wrap: wrap;
+                .contactTabs__tab {
+                    padding: 0 10px;
+                }
+            }
+
+            .contactTabs__bottom {
+                padding: 24px 12px 0 12px;
+                margin-bottom: 0;
+
+                .contactTabsBody__tab {
+
+                    .contact_area {
+
+                        // .contact_area__flex
+                        &__flex {
+                            display: block;
+                        }
+
+                        // .contact_area__left
+                        &__left {
+                            padding: 10px 0;
+                            width: 100%;
+
+
+                        }
+
+                        // .contact_area__center
+                        &__center {
+                            padding: 10px 0;
+                            width: 100%;
+
+
+                        }
+
+                        // .contact_area__right
+                        &__right {
+                            width: 100%;
+                            padding: 10px 0;
+                        }
+
+                        // .contact_area__fsite_social
+                        &__fsite_social {
+                            min-width: 200px;
+                            width: 217px;
+                        }
+                    }
+
+                }
+
+
+            }
+        }
+        .social__flex {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 468px) {
+    .catalogContacts .contactTabs .contactTabs__bottom .contactTabsBody__tab .contact_area__center .contact_area__label {
+        padding: 16px 0 10px 0 !important;
+    }
+    .catalogContacts {
+        .contact_area__fsite_social {
+            width: 100% !important;
+            min-width: 1px !important;
+            max-width: 100% !important;
+        }
+        .social__flex {
+            width: 100% !important;
+        }
+    }
+
+}
+

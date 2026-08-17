@@ -1,0 +1,67 @@
+.hbox.temp_img .hrow {
+  display: flex;
+  flex-wrap: wrap; }
+  .hbox.temp_img .hrow .hcol {
+    width: 50%;
+    height: 273px; }
+
+.hbox__top {
+  padding: 24px 24px 16px 0; }
+  .hbox__top .breadcrumb {
+    min-height: 30px; }
+  .hbox__top .h1, .hbox__top h1, .hbox__top h2, .hbox__top h3 {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.1em;
+    padding: 10px 0 10px 0; }
+    .hbox__top .h1 span, .hbox__top h1 span, .hbox__top h2 span, .hbox__top h3 span {
+      position: relative; }
+      .hbox__top .h1 span img, .hbox__top h1 span img, .hbox__top h2 span img, .hbox__top h3 span img {
+        border-radius: 8px;
+        position: relative;
+        top: 3px;
+        margin-right: 5px; }
+
+.pc_category {
+  position: relative;
+  width: 100%; }
+  .pc_category a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s; }
+  .pc_category a:before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: '';
+    display: block;
+    background: #282828;
+    background: linear-gradient(0deg, #282828 0%, rgba(0, 0, 0, 0) 91%);
+    transition: 0.3s;
+    border-radius: 16px; }
+  .pc_category h4 {
+    position: absolute;
+    bottom: 30px;
+    left: 24px;
+    z-index: 10;
+    padding: 10px 0;
+    font-size: 36px;
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.3s; }
+  .pc_category .pc_category_img {
+    border-radius: 16px; }
+  .pc_category .pc_category_flag {
+    position: absolute;
+    z-index: 11;
+    bottom: 90px;
+    left: 24px;
+    border: 1px solid #fff;
+    border-radius: 5px; }
+  .pc_category a:hover h4 {
+    color: #ff5200; }
+
+/*# sourceMappingURL=templates.css.map */

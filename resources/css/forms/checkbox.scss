@@ -1,0 +1,114 @@
+$colorRed: #EF533F;
+$color: #282828;
+$colorGrey: #667085;
+$checkbox-size: 0.8rem;
+$checkedbox-size: 1.2rem;
+
+$dark:   #15171E;
+$white:  mix($dark, white, 20%);
+
+
+.checkbox {
+    margin: 15px;
+}
+
+
+// checkbox styles start
+
+@keyframes pull{
+    0% { height: 0; }
+    100% { height: 1.2rem;  }
+}
+
+@keyframes pop {
+    0% { opacity:0; }
+    75% {opacity:1; }
+    100% { transform: scale(1.2); }
+}
+
+.checkbox-flip, .checkbox-pop, .checkbox-pull, .checkbox-spin {
+    display:none;
+}
+
+.checkbox-flip + label span,
+.checkbox-pop + label span,
+.checkbox-pull + label span,
+.checkbox-spin + label span{
+    display:inline-block;
+    width:25px;
+    height:17px;
+    margin: 0 5px -4px 0; /*layout relationship between check and label*/
+    &:before,
+    &:after {
+       // @include transition(all .3s ease-in-out);
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: $checkbox-size;
+        height: $checkbox-size;
+        background: transparent;
+        border: 1px solid $color;
+        border-radius: 3px;
+    }
+    &:after {
+        z-index: 0;
+        border: none;
+    }
+}
+
+.a_user__checkbox_all {
+    .checkbox-flip + label span,
+    .checkbox-pop + label span,
+    .checkbox-pull + label span,
+    .checkbox-spin + label span{
+        width:25px;
+        height:17px;
+        margin: 2px 5px -4px 0; /*layout relationship between check and label*/
+        &:before,
+        &:after {
+
+            border: 1px solid $colorGrey;
+
+        }
+        &:after {
+        }
+    }
+    span {
+        position: relative;
+        left: 6px;
+    }
+}
+
+.checkbox-flip:checked + label span {
+    &:before {
+        transform:(rotateY(180deg));
+        background: $colorRed;
+        border: 1px solid $colorRed;
+
+    }
+}
+
+.checkbox-pop:checked + label span {
+    &:before {
+        animation: pop .3s ease;
+        z-index: 100;
+        background: $colorRed;
+    }
+}
+
+.checkbox-pull:checked + label span {
+    &:after {
+        width: $checkedbox-size;
+        height: $checkedbox-size;
+        background: $colorRed;
+        animation: pull .4s linear;
+    }
+}
+
+.checkbox-spin:checked + label span {
+    &:before {
+      //  @include transform(rotateZ(180deg));
+        background: $colorRed;
+    }
+}
+

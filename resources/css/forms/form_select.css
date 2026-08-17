@@ -1,0 +1,72 @@
+@charset "UTF-8";
+.F_form .form_select .chosen-container {
+  width: 100% !important;
+  margin: 2px 0;
+  font-size: 15px;
+}
+.F_form .form_select .chosen-container-single .chosen-single {
+  height: 46px;
+  line-height: 44px;
+  padding: 0 12px;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  color: #282828;
+  font-size: 15px;
+}
+.F_form .form_select .chosen-container-single .chosen-single span {
+  margin-right: 30px;
+}
+.F_form .form_select .chosen-container-single .chosen-single div b {
+  top: 8px;
+}
+.F_form .form_select .chosen-container-single .chosen-default {
+  color: #667085;
+}
+.F_form .form_select .chosen-container-active.chosen-with-drop .chosen-single {
+  border-radius: 12px 12px 0 0;
+}
+.F_form .form_select .chosen-container .chosen-drop {
+  border-radius: 0 0 12px 12px;
+}
+.F_form .form_select .chosen-container-single .chosen-search input[type=text] {
+  font-size: 15px;
+}
+.F_form .form_select .chosen-results {
+  font-size: 15px;
+}
+
+/* Форма «Приобретение сертификата»: что именно заказывают —
+   тип сертификата и выбранный номинал (заполняет ajax.js) */
+.F_form_certificate .F_h2 span {
+  color: rgba(255, 255, 255, 0.9);
+}
+.F_form_certificate .text_input.r_right {
+  margin-top: 16px;
+}
+.F_form_certificate .cert_order__summary {
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #F7F7F7;
+}
+.F_form_certificate .cert_order__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.F_form_certificate .cert_order__row + .cert_order__row {
+  margin-top: 8px;
+}
+.F_form_certificate .cert_order__label {
+  font-size: 14px;
+  color: #667085;
+}
+.F_form_certificate .cert_order__value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #282828;
+  text-align: right;
+}
+
+/*# sourceMappingURL=form_select.css.map */

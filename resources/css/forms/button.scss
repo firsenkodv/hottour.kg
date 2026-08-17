@@ -1,0 +1,92 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+$colorGreen: #00A357;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+.button {
+    height: 46px;
+    border: 1px solid $colorRed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include family;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    background: $colorRed;
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    &:hover {
+        border: 1px solid $colorRed;
+        color: $colorRed;
+        background: #fff;
+    }
+}
+.button_big {
+    height: 54px;
+
+}
+.button_normal {
+    height: 46px;
+
+}
+.button_small {
+
+}
+.button_mini {
+    height: 36px;
+    font-size: 15px;
+}
+
+/* цвет */
+.button_green {
+    border: 1px solid $colorGreen;
+    background: $colorGreen;
+
+    &:hover {
+        border: 1px solid $colorGreen;
+        color: $colorGreen;
+        background: #fff;
+    }
+}
+
+@media (max-width: 793px) {
+    .button_big {
+        height: 46px;
+        font-size: 16px;
+
+
+    }
+    .button_normal {
+        height: 36px;
+        font-size: 15px;
+
+
+    }
+    .button_small {
+
+    }
+    .button_mini {
+        height: 36px;
+
+    }
+}
+
+
