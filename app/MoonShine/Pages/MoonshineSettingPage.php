@@ -7,6 +7,7 @@ namespace App\MoonShine\Pages;
 use App\Bitrix24\Bitrix24;
 use App\Models\MoonshineSetting;
 use App\Models\Setting;
+use App\Tourvisor\TourvisorSettings;
 use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\Laravel\Pages\Page;
 use MoonShine\MenuManager\Attributes\Group;
@@ -20,6 +21,8 @@ use MoonShine\UI\Components\Layout\Divider;
 use MoonShine\UI\Components\Layout\Grid;
 use MoonShine\UI\Components\Tabs;
 use MoonShine\UI\Components\Tabs\Tab;
+use MoonShine\UI\Fields\Number;
+use MoonShine\UI\Fields\Select;
 use MoonShine\UI\Fields\Switcher;
 use MoonShine\UI\Fields\Text;
 use MoonShine\UI\Fields\Textarea;
@@ -79,6 +82,15 @@ class MoonshineSettingPage extends Page
         // Доступы к Битрикс24 хранятся отдельно, группой в settings:
         // moonshine_settings — таблица с фиксированными колонками
         $bitrix = Setting::getGroup(Bitrix24::GROUP)->data ?? [];
+
+        // То же для Tourvisor. Пустое поле означает «взять из .env»,
+        // см. App\Tourvisor\TourvisorSettings
+        $tourvisor = Setting::getGroup(TourvisorSettings::GROUP)->data ?? [];
+
+        $tv = static fn (string $name): string => (string) TourvisorSettings::reveal(
+            $name,
+            $tourvisor[$name] ?? ''
+        );
 
         return [
             FormBuilder::make('/moonshine/setting-website', FormMethod::POST)
@@ -172,6 +184,52 @@ class MoonshineSettingPage extends Page
                                 ])->columnSpan(8),
                             ]),
                         ])->icon('bell-snooze'),
+
+                        Tab::make(__('Турвизор'), [
+                            Grid::make([
+                                Column::make([
+                                    Divider::make(__('Доступы к API')),
+
+                                    Box::make([
+                                        Text::make(__('Логин'), 'tv_login')
+                                            ->default($tv('tv_login'))
+                                            ->hint(__('Выдаётся в кабинете Tourvisor. Пустое поле — будет взят TOURVISOR_LOGIN из .env')),
+
+                                        Text::make(__('Пароль'), 'tv_password')
+                                            ->default($tv('tv_password'))
+                                            ->hint(__('Пустое поле — будет взят TOURVISOR_PASSWORD из .env')),
+
+                                        Text::make(__('Адрес API'), 'tv_url')
+                                            ->default($tv('tv_url'))
+                                            ->hint(__('По умолчанию https://tourvisor.ru/xml/')),
+                                    ]),
+                                ])->columnSpan(6),
+
+                                Column::make([
+                                    Divider::make(__('Режим и лимиты')),
+
+                                    Box::make([
+                                        Select::make(__('Режим работы'), 'tv_mode')
+                                            ->options([
+                                                'live' => 'live — запрос всегда уходит на tourvisor.ru',
+                                                'auto' => 'auto — есть в кэше, берём оттуда; нет — запрос и запись',
+                                                'record' => 'record — запрос уходит, ответ дополнительно пишется в кэш',
+                                                'replay' => 'replay — сеть не используется, только кэш',
+                                            ])
+                                            ->default($tv('tv_mode'))
+                                            ->hint(__('На боевом сервере — live. Остальные режимы для отладки без обращений к API')),
+
+                                        Number::make(__('Кэш справочников, секунд'), 'tv_list_ttl')
+                                            ->default($tv('tv_list_ttl'))
+                                            ->hint(__('Города вылета, страны, регионы и отели. По умолчанию 21600 — 6 часов. Поиск туров не кэшируется')),
+
+                                        Number::make(__('Таймаут запроса, секунд'), 'tv_timeout')
+                                            ->default($tv('tv_timeout'))
+                                            ->hint(__('По умолчанию 8. Без таймаута недоступный tourvisor.ru вешает страницу на минуту')),
+                                    ]),
+                                ])->columnSpan(6),
+                            ]),
+                        ])->icon('globe-alt'),
                     ]),
                 ])
                 ->submit(label: __('Сохранить'), attributes: ['class' => 'btn-primary']),

@@ -5,7 +5,7 @@
     <div class="hhh_adr">
         <span class="h_s_sity"><span class="h_s_sity_js">
                 @if(is_null($session_sity))
-                    {{config('selects.data_sity.almaty.text')}}
+                    {{config('selects.data_sity.bishkek.text')}}
                 @else
                     {{$session_sity}}
                 @endif

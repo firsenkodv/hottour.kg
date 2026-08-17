@@ -8,6 +8,7 @@ use App\Bitrix24\Bitrix24;
 use App\Http\Controllers\Controller;
 use App\Models\MoonshineSetting;
 use App\Models\Setting;
+use App\Tourvisor\TourvisorSettings;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -44,6 +45,7 @@ final class MoonshineSettingController extends Controller
             ]);
 
         $this->saveBitrix24($request);
+        $this->saveTourvisor($request);
 
         return back();
     }
@@ -65,5 +67,31 @@ final class MoonshineSettingController extends Controller
         ];
 
         $setting->save();
+    }
+
+    /**
+     * Доступы и параметры Tourvisor — группа `tourvisor` в settings.
+     *
+     * Всё хранится открытым текстом, как и вебхук Битрикс24: пароль должно
+     * быть видно в админке, иначе его неоткуда узнать. Пустое поле означает
+     * «взять из .env», а не «оставить прежнее» — поле в форме показывает
+     * текущее значение и возвращает его обратно.
+     */
+    private function saveTourvisor(Request $request): void
+    {
+        $setting = Setting::getGroup(TourvisorSettings::GROUP);
+
+        $setting->data = [
+            'tv_login' => $request->input('tv_login'),
+            'tv_password' => $request->input('tv_password'),
+            'tv_url' => $request->input('tv_url'),
+            'tv_mode' => $request->input('tv_mode'),
+            'tv_list_ttl' => $request->input('tv_list_ttl'),
+            'tv_timeout' => $request->input('tv_timeout'),
+        ];
+
+        $setting->save();
+
+        TourvisorSettings::forget();
     }
 }

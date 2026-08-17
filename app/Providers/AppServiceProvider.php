@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Tourvisor\TourvisorSettings;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
@@ -31,6 +32,11 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->registerExternalDirectives();
+
+        // Доступы и параметры Tourvisor из админки поверх config/tourvisor.php.
+        // Должно выполняться до первого обращения к API — сервис читает
+        // config() в конструкторе.
+        TourvisorSettings::apply();
     }
 
     /**

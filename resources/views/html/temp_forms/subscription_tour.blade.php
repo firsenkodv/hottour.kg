@@ -64,8 +64,8 @@
 
                             <x-forms.select
                                 name="sity"
-                                value="{{ (old('sity')?:'almaty') }}"
-                                text="{{ old('sity')?:__('Алматы') }}"
+                                value="{{ (old('sity')?:'bishkek') }}"
+                                text="{{ old('sity')?:__('Бишкек') }}"
                                 placeholder=""
                             >
                                 <ul class="select__list scroll-block" style="display: none;">

@@ -129,7 +129,7 @@
 
         function getYaMap() {
             var myMap = new ymaps.Map("JFormFieldMap", {
-                center: [{{(isset($point))?$point:'48.6525, 67.5158'}}],
+                center: [{{(isset($point))?$point:'41.7000, 74.8000'}}],
                 zoom: 5,
                 controls: ['zoomControl', 'typeSelector', 'fullscreenControl']
             }, {searchControlProvider: 'yandex#search'});
