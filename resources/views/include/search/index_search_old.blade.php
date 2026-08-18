@@ -7,7 +7,7 @@
     <div class="s_result_ s_result_2">
         <div class="s_result_relative s_result_relative1 active">
 
-            <div class="tv-search-form tv-moduleid-199966"></div>
+            <div class="tv-search-form tv-moduleid-{{ config('tourvisor.module_search') }}"></div>
             @external('tourvisor_js')
                 {{-- скрипт синхронный: при недоступном tourvisor.ru (VPN) вешает страницу --}}
                 <script type="text/javascript" src="//tourvisor.ru/module/init.js"></script>
@@ -17,7 +17,7 @@
 
         </div><!--.s_result_relative-->
         <div class="s_result_relative s_result_relative2">
-            <div class="tv-search-form tv-moduleid-199966"></div>
+            <div class="tv-search-form tv-moduleid-{{ config('tourvisor.module_search') }}"></div>
             @external('tourvisor_js')
                 <script type="text/javascript" src="//tourvisor.ru/module/init.js"></script>
             @else

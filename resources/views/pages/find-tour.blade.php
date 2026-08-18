@@ -5,7 +5,7 @@
         @include('include.search.select.select_search_type')
 
         <div class="block">
-        <div class="pad_t40  tv-search-form tv-moduleid-9960271"></div>
+        <div class="pad_t40  tv-search-form tv-moduleid-{{ config('tourvisor.module_findtour') }}"></div>
         @external('tourvisor_js')
             {{-- скрипт синхронный: при недоступном tourvisor.ru (VPN) вешает страницу --}}
             <script type="text/javascript" src="//tourvisor.ru/module/init.js"></script>
