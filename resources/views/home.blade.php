@@ -6,7 +6,7 @@
 />
 @section('content')
     <section class="good_summer"></section>
-
+{{--главная--}}
     <main>
         <div class="background_mobile">
 
