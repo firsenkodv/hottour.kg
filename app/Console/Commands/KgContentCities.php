@@ -53,12 +53,24 @@ class KgContentCities extends Command
         'infos', 'publs', 'travelitems', 'pages', 'hot_categories',
         'dumps', 'dump2s', 'excursions', 'resorts', 'companies',
         'travelcategories', 'menus', 'menuhottours', 'menutours',
+        // у этих таблиц есть и контент (title/subtitle/metatitle/...),
+        // и служебные колонки с городом вылета — вторые в EXCLUDED_COLUMNS
+        'tours', 'customer_hot_tours',
     ];
 
     /**
-     * slug — URL страниц, менять нельзя; остальное — пути к файлам.
+     * slug — URL страниц, менять нельзя; img/logo/... — пути к файлам.
+     *
+     * city и cityname — города ВЫЛЕТА (механика поиска, не текст):
+     * `city` хранит код Tourvisor, `cityname` — его расшифровку, которую
+     * при каждом прогоне перезаписывает hottour:cron из getDepartureName().
+     * Заменить их здесь значило бы рассинхронизировать карточку с кодом
+     * города: подпись «Бишкек» при коде 60 (Алматы).
      */
-    private const EXCLUDED_COLUMNS = ['slug', 'img', 'logo', 'icon', 'file'];
+    private const EXCLUDED_COLUMNS = [
+        'slug', 'img', 'logo', 'icon', 'file',
+        'city', 'cityname',
+    ];
 
     /**
      * Материалы, где автозамена дала бы ложную географию. Правятся руками.
@@ -192,6 +204,29 @@ class KgContentCities extends Command
         ['/hottour\.kz/u', 'hottour.kg'],
     ];
 
+    /**
+     * Правила для колонки slug — латиница, поэтому отдельный набор.
+     * Порядок важен: предложные пары раньше голых форм, чтобы адрес
+     * совпадал по падежу с текстом («из Бишкека» -> iz-bishkeka).
+     *
+     * Менять адреса при клонировании безопасно: домен новый, старые URL
+     * нигде не проиндексированы и внешних ссылок на них нет. На живом
+     * сайте так делать нельзя — понадобились бы 301-редиректы.
+     */
+    private const SLUG_RULES = [
+        ['/iz-almaty/u', 'iz-bishkeka'],
+        ['/iz-astany/u', 'iz-osha'],
+        ['/from-almaty/u', 'from-bishkek'],
+        ['/from-astana/u', 'from-osh'],
+        ['/-astana(?![a-z])/u', '-osh'],
+        ['/almaty/u', 'bishkek'],
+        ['/astany/u', 'osha'],
+        ['/astana/u', 'osh'],
+        ['/kaza[kh]?hstana/u', 'kyrgyzstana'],
+        ['/kaza[kh]?hstane/u', 'kyrgyzstane'],
+        ['/kaza[kh]?hstan/u', 'kyrgyzstan'],
+    ];
+
     public function handle(): int
     {
         $apply = (bool) $this->option('apply');
@@ -206,7 +241,9 @@ class KgContentCities extends Command
                 continue;
             }
 
-            $query = DB::table($table)->where(function ($q) use ($columns) {
+            $hasSlug = $this->hasSlug($table);
+
+            $query = DB::table($table)->where(function ($q) use ($columns, $hasSlug) {
                 $needles = [
                     'Алмат', 'Астан', 'азахстан', 'hottour.kz',
                     'Тараз', 'Шымкент', 'Актау', 'Актобе', 'Атырау',
@@ -217,11 +254,18 @@ class KgContentCities extends Command
                         $q->orWhere($c, 'like', "%$needle%");
                     }
                 }
+                if ($hasSlug) {
+                    foreach (['almaty', 'astana', 'astany', 'kazakhstan', 'kazahstan'] as $needle) {
+                        $q->orWhere('slug', 'like', "%$needle%");
+                    }
+                }
             });
 
             if (isset(self::EXCLUDED_ROWS[$table])) {
                 $query->whereNotIn('id', self::EXCLUDED_ROWS[$table]);
             }
+
+            $slugChanges = [];
 
             foreach ($query->orderBy('id')->get() as $row) {
                 $changes = [];
@@ -240,12 +284,34 @@ class KgContentCities extends Command
                     }
                 }
 
+                if ($hasSlug) {
+                    $oldSlug = (string) ($row->slug ?? '');
+                    $newSlug = $this->transformSlug($oldSlug);
+                    if ($oldSlug !== '' && $newSlug !== $oldSlug) {
+                        $changes['slug'] = $newSlug;
+                        $slugChanges[(int) $row->id] = [$oldSlug, $newSlug];
+                        $totalFields++;
+                        $report[] = ["## $table #{$row->id}  slug", "  − $oldSlug", "  + $newSlug"];
+                    }
+                }
+
                 if ($changes !== []) {
                     $totalRows++;
                     if ($apply) {
                         DB::table($table)->where('id', $row->id)->update($changes);
                     }
                 }
+            }
+
+            // адрес обязан остаться уникальным: две записи с одинаковым slug
+            // сделали бы одну из страниц недостижимой
+            if ($slugChanges !== [] && ($conflicts = $this->slugConflicts($table, $slugChanges)) !== []) {
+                $this->error("Конфликт адресов в таблице $table — замена слагов дала бы дубли:");
+                foreach ($conflicts as $line) {
+                    $this->line("  $line");
+                }
+
+                return self::FAILURE;
             }
         }
 
@@ -283,6 +349,58 @@ class KgContentCities extends Command
         }
 
         return $columns;
+    }
+
+    private function hasSlug(string $table): bool
+    {
+        foreach (DB::select("SHOW COLUMNS FROM `$table`") as $col) {
+            if ($col->Field === 'slug') {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private function transformSlug(string $slug): string
+    {
+        foreach (self::SLUG_RULES as [$pattern, $replacement]) {
+            $slug = preg_replace($pattern, $replacement, $slug);
+        }
+
+        return $slug;
+    }
+
+    /**
+     * Проверка уникальности новых адресов: и между собой, и против slug'ов
+     * записей, которые замена не затрагивает (например, исключённых
+     * материалов о Казахстане).
+     *
+     * @param  array<int, array{0: string, 1: string}>  $slugChanges
+     * @return list<string>
+     */
+    private function slugConflicts(string $table, array $slugChanges): array
+    {
+        $conflicts = [];
+        $seen = [];
+
+        foreach ($slugChanges as $id => [$old, $new]) {
+            if (isset($seen[$new])) {
+                $conflicts[] = "#$id и #{$seen[$new]} оба стали бы «$new»";
+            }
+            $seen[$new] = $id;
+        }
+
+        $untouched = DB::table($table)
+            ->whereNotIn('id', array_keys($slugChanges))
+            ->whereIn('slug', array_keys($seen))
+            ->pluck('slug', 'id');
+
+        foreach ($untouched as $id => $slug) {
+            $conflicts[] = "#{$seen[$slug]} стал бы «$slug», но так уже назван #$id";
+        }
+
+        return $conflicts;
     }
 
     private function transform(string $text): string
