@@ -2,7 +2,6 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\RedirectMiddleware;
 use App\Http\Middleware\RoleMiddleware;
 use App\Http\Middleware\UserBlockedMiddleware;
 use App\Http\Middleware\UserPublishedMiddleware;
@@ -25,7 +24,10 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        RedirectMiddleware::class,
+
+        // RedirectMiddleware удалён: он достался от казахстанского сайта и
+        // уводил /hottour, /poleznoe и /tours на /strany, обрубая заглавные
+        // страницы этих разделов. На киргизском сайте редиректов нет.
 
     ];
 

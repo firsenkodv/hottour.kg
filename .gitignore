@@ -17,12 +17,19 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/config/currency
-/config/seo
-/config/surveys
-/config/tourvisor
-/config/vars
-/docs
+# ВНИМАНИЕ: правило ниже досталось от hottour-v4 и там было безобидным —
+# файлы попали в репозиторий ДО его появления, а .gitignore на уже
+# отслеживаемые файлы не действует. При `git init` нового сайта правило
+# ожило и молча оставило прод без девяти конфигов: символ валюты,
+# SEO главной, справочники Tourvisor, темы опросов, суммы кешбэка.
+# Секретов в них нет, поэтому конфиги отслеживаются как обычный код:
+#
+# /config/currency
+# /config/seo
+# /config/surveys
+# /config/tourvisor
+# /config/vars
+# /docs
 
 # рабочие артефакты Claude/Playwright — скриншоты и логи браузера,
 # в репозиторий и деплой не попадают
