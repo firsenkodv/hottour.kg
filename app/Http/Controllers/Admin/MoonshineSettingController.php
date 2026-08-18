@@ -88,6 +88,8 @@ final class MoonshineSettingController extends Controller
             'tv_mode' => $request->input('tv_mode'),
             'tv_list_ttl' => $request->input('tv_list_ttl'),
             'tv_timeout' => $request->input('tv_timeout'),
+            'tv_module_search' => trim((string) $request->input('tv_module_search')),
+            'tv_module_findtour' => trim((string) $request->input('tv_module_findtour')),
             'tv_departures' => $this->normalizeDepartures(
                 (array) $request->input('tv_departures', [])
             ),

@@ -41,6 +41,8 @@ final class TourvisorSettings
         'tv_mode' => 'mode',
         'tv_list_ttl' => 'list_ttl',
         'tv_timeout' => 'timeout',
+        'tv_module_search' => 'module_search',
+        'tv_module_findtour' => 'module_findtour',
     ];
 
     /**

@@ -29,7 +29,11 @@ yarn-error.log
 # /config/surveys
 # /config/tourvisor
 # /config/vars
-# /docs
+
+# docs остаётся закрытым: там рабочие заметки и docs/setting.md
+# с доступами к серверу. GitHub Push Protection отклоняет пуш,
+# если находит в нём учётные данные.
+/docs
 
 # рабочие артефакты Claude/Playwright — скриншоты и логи браузера,
 # в репозиторий и деплой не попадают

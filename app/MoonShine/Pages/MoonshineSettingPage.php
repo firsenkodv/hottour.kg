@@ -204,6 +204,18 @@ class MoonshineSettingPage extends Page
                                             ->default($tv('tv_url'))
                                             ->hint(__('По умолчанию https://tourvisor.ru/xml/')),
                                     ]),
+
+                                    Divider::make(__('Модули поиска на сайте')),
+
+                                    Box::make([
+                                        Text::make(__('Модуль поиска туров'), 'tv_module_search')
+                                            ->default((string) config('tourvisor.module_search'))
+                                            ->hint(__('Номер модуля из кабинета Tourvisor. Виджет на главной — вкладки «Поиск туров» и «Отели»')),
+
+                                        Text::make(__('Модуль на странице подбора'), 'tv_module_findtour')
+                                            ->default((string) config('tourvisor.module_findtour'))
+                                            ->hint(__('Виджет на странице /findtour. Модуль привязан к домену: с чужим номером виджет не отрисуется')),
+                                    ]),
                                 ])->columnSpan(6),
 
                                 Column::make([
