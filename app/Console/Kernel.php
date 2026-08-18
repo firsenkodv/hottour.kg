@@ -24,6 +24,10 @@ class Kernel extends ConsoleKernel
           $schedule->command('sitemap-hotels:cron')->weeklyOn(1, '17:00');
           $schedule->command('hottour:cron')->dailyAt('04:00');
 
+          // сверка справочника городов вылета Tourvisor с городами сайта;
+          // при изменениях (например, Tourvisor добавил Ош) — письмо админу
+          $schedule->command('tourvisor:departures-watch')->dailyAt('05:00')->withoutOverlapping();
+
           $schedule->command('mainhotels:cron')->dailyAt('01:00')->withoutOverlapping();
          // $schedule->command('test:cron')->everyMinute()->withoutOverlapping();
 

@@ -88,10 +88,61 @@ final class MoonshineSettingController extends Controller
             'tv_mode' => $request->input('tv_mode'),
             'tv_list_ttl' => $request->input('tv_list_ttl'),
             'tv_timeout' => $request->input('tv_timeout'),
+            'tv_departures' => $this->normalizeDepartures(
+                (array) $request->input('tv_departures', [])
+            ),
         ];
 
         $setting->save();
 
         TourvisorSettings::forget();
+    }
+
+    /**
+     * Популярные города вылета из Json-поля: id и name обязательны.
+     * Порядок строк сохраняется — он же порядок в верхней группе селекта,
+     * первый город — город по умолчанию. Группа «Остальные» сюда не
+     * входит: она строится из модели Contact (Tourvisor::getDeparture).
+     * Пустой список — легально, тогда действует страновой конфиг
+     * (см. TourvisorSettings::departures()).
+     *
+     * Форма не показывает namefrom («из Бишкека») — поле во фронте нигде
+     * не выводится, — поэтому в запросе его нет. Прежнее значение берём
+     * из текущего списка по id, чтобы сохранение не затирало форму из
+     * странового конфига названием в именительном падеже.
+     *
+     * @param  array<int, mixed>  $rows
+     * @return list<array<string, mixed>>
+     */
+    private function normalizeDepartures(array $rows): array
+    {
+        $known = [];
+        foreach (TourvisorSettings::departures() as $item) {
+            $known[(string) ($item['id'] ?? '')] = (string) ($item['namefrom'] ?? '');
+        }
+
+        $out = [];
+
+        foreach ($rows as $row) {
+            if (! \is_array($row)) {
+                continue;
+            }
+
+            $id = trim((string) ($row['id'] ?? ''));
+            $name = trim((string) ($row['name'] ?? ''));
+            if ($id === '' || $name === '') {
+                continue;
+            }
+
+            $out[] = [
+                'id' => $id,
+                'name' => $name,
+                'namefrom' => trim((string) ($row['namefrom'] ?? ''))
+                    ?: ($known[$id] ?? '')
+                    ?: $name,
+            ];
+        }
+
+        return $out;
     }
 }

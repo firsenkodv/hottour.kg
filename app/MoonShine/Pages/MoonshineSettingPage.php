@@ -21,6 +21,7 @@ use MoonShine\UI\Components\Layout\Divider;
 use MoonShine\UI\Components\Layout\Grid;
 use MoonShine\UI\Components\Tabs;
 use MoonShine\UI\Components\Tabs\Tab;
+use MoonShine\UI\Fields\Json;
 use MoonShine\UI\Fields\Number;
 use MoonShine\UI\Fields\Select;
 use MoonShine\UI\Fields\Switcher;
@@ -228,6 +229,23 @@ class MoonshineSettingPage extends Page
                                             ->hint(__('По умолчанию 8. Без таймаута недоступный tourvisor.ru вешает страницу на минуту')),
                                     ]),
                                 ])->columnSpan(6),
+
+                                Column::make([
+                                    Divider::make(__('Города вылета')),
+
+                                    Box::make([
+                                        Json::make(__('Популярные города'), 'tv_departures')
+                                            ->fields([
+                                                Text::make(__('ID'), 'id')
+                                                    ->hint(__('Код города из справочника Tourvisor')),
+                                                Text::make(__('Название'), 'name'),
+                                            ])
+                                            ->creatable(limit: 10)
+                                            ->removable()
+                                            ->default(TourvisorSettings::departures())
+                                            ->hint(__('Верхняя группа селекта «Город вылета»; первый в списке — город по умолчанию. Группа «Остальные» заполняется сама — городами сайта из раздела «Контакты», в порядке их сортировки')),
+                                    ]),
+                                ])->columnSpan(12),
                             ]),
                         ])->icon('globe-alt'),
                     ]),

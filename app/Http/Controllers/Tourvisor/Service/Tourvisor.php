@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Tourvisor\Service;
 
 use App\Models\TourvisorCountry;
+use App\Tourvisor\TourvisorSettings;
 use Domain\TourvisorCountry\ViewModels\TourvisorCountryViewModel;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
@@ -60,25 +61,39 @@ class Tourvisor
     }
 
     public function getDepartureDefault(){
-        $default = json_decode(file_get_contents(__DIR__. '/departure.json'), true);
+        // город по умолчанию — первый популярный из блока «Города вылета»
+        // (админка, при пустой настройке — страновой конфиг)
+        $default = TourvisorSettings::departures();
         foreach($default as $departure){
-
-            if(isset($departure['default'])) {
-                return $departure;
-            }
+            return $departure;
         }
         return false;
     }
 
     public function getDepartureName($id){
 
-        $default = json_decode(file_get_contents(__DIR__. '/departure.json'), true);
+        // сперва популярные из админки, затем справочник API (кэшируется):
+        // в блоке теперь только города своей страны, а кронам и карточкам
+        // встречаются и другие id — например, старые записи туров
+        $default = TourvisorSettings::departures();
         foreach($default as $departure){
 
             if(($departure['id'] == $id)) {
                 return $departure['name'];
             }
         }
+
+        try {
+            $result = $this->_get(['type'=>'departure'], 'list.php');
+            foreach($result->lists->departures->departure ?? [] as $departure){
+                if($departure->id == $id) {
+                    return (string)$departure->name;
+                }
+            }
+        } catch (\Throwable) {
+            // сети нет — ведём себя как раньше
+        }
+
         return false;
     }
 
@@ -122,39 +137,121 @@ class Tourvisor
         return false;
     }
 
-    public function getDeparture(){
-        $query = ['type'=>'departure'];
-        $result = $this->_get($query, 'list.php');
-        $default = json_decode(file_get_contents(__DIR__. '/departure.json'), true);
+    /**
+     * Живой справочник городов вылета API: имя в нижнем регистре ->
+     * данные города. Пустой массив — API недоступен и кэша нет.
+     * Именно этот список (а не файлы в проекте) решает, какие города
+     * доступны учётке; обновляется каждые list_ttl.
+     */
+    public function departureCatalog(): array
+    {
+        $result = $this->_get(['type'=>'departure'], 'list.php');
+        $api_departures = $result->lists->departures->departure ?? null;
 
-
-        $_d = [];
-        foreach($default as $departure){
-            $_d[$departure['id']] = $departure;
-            if(!empty($_REQUEST['departure']) && !empty($departure['default']) && $_REQUEST['departure'] != $departure['id']){
-                $_d[$departure['id']]['default'] = false;
-            } elseif (!empty($_REQUEST['departure']) && !empty($departure['default']) && $_REQUEST['departure'] == $departure['id']){
-                $_d[$departure['id']]['default'] = true;
-                $this->default['departure'] = $departure['id'];
-            } elseif (!empty($_REQUEST['departure']) && $_REQUEST['departure'] == $departure['id']){
-                $_d[$departure['id']]['default'] = true;
-                $this->default['departure'] = $departure['id'];
-            } elseif(!empty($departure['default'])){
-                $this->default['departure'] = $departure['id'];
+        $catalog = [];
+        if (is_iterable($api_departures)) {
+            foreach($api_departures as $departure){
+                $catalog[mb_strtolower(trim((string)$departure->name))] = [
+                    'id' => (string)$departure->id,
+                    'name' => (string)$departure->name,
+                    'namefrom' => (string)($departure->namefrom ?: $departure->name),
+                ];
             }
         }
+
+        return $catalog;
+    }
+
+    /**
+     * Город сайта -> запись справочника. Сначала точное совпадение имени;
+     * имя на сайте и в справочнике может расходиться формой
+     * («Караганда» / «Караганды»), поэтому дальше пробуем общую основу
+     * без последней буквы — только когда она достаточно длинная и
+     * совпадение единственное. null — города в справочнике нет.
+     */
+    public static function matchDeparture(array $catalog, string $title): ?array
+    {
+        $key = mb_strtolower(trim($title));
+        if ($key === '') {
+            return null;
+        }
+        if (isset($catalog[$key])) {
+            return $catalog[$key];
+        }
+
+        if (mb_strlen($key) >= 6) {
+            $stem = mb_substr($key, 0, -1);
+            $found = [];
+            foreach ($catalog as $api_name => $data) {
+                if (str_starts_with($api_name, $stem)) {
+                    $found[] = $data;
+                }
+            }
+            if (count($found) === 1) {
+                return $found[0];
+            }
+        }
+
+        return null;
+    }
+
+    public function getDeparture(){
+        // «Популярные» (верхняя группа) — блок «Города вылета» в админке
+        // (см. TourvisorSettings::departures), порядок строк = порядок в
+        // группе, первый — город по умолчанию. «Остальные» подтягиваются
+        // автоматически из модели Contact — города, заведённые на сайте, —
+        // в порядке их сортировки в админке. Tourvisor-id для них ищется
+        // по имени в живом справочнике API; города, которых у Tourvisor
+        // нет (Ош, Джалал-Абад...), в селект НЕ попадают: выбор такого
+        // города дал бы пустой поиск. Как только Tourvisor добавит город,
+        // он появится сам — справочник перечитывается каждые list_ttl,
+        // а письмо об этом шлёт крон tourvisor:departures-watch.
+        // Сверить руками: php artisan tourvisor:departures
+        $catalog = $this->departureCatalog();
+
+        $popular = TourvisorSettings::departures();
+
+        $default_id = $popular[0]['id'] ?? null;
+        if(!empty($_REQUEST['departure'])){
+            $default_id = $_REQUEST['departure'];
+        }
+        $this->default['departure'] = $default_id;
 
         $list = ['popular'=>[], 'other'=>[]];
-        foreach($result->lists->departures->departure as $departure){
-            if(isset($_d[$departure->id]) && $_d[$departure->id]['active']){
-                if($_d[$departure->id]['popular']){
-                    $list['popular'][] = $_d[$departure->id];
-                } else {
-                    $list['other'][] = $_d[$departure->id];
-                }
+        $seen = [];
 
-            }
+        foreach($popular as $departure){
+            $seen[mb_strtolower(trim((string)$departure['name']))] = true;
+            $departure['default'] = ($departure['id'] == $default_id);
+            $list['popular'][] = $departure;
         }
+
+        $cities = \App\Models\Contact::query()
+            ->where('published', 1)
+            ->orderBy('sorting')
+            ->orderBy('id')
+            ->pluck('title');
+
+        foreach($cities as $title){
+            $title = trim((string)$title);
+            $key = mb_strtolower($title);
+            if($title === '' || isset($seen[$key])){
+                continue; // популярный или дубль города в контактах
+            }
+            $seen[$key] = true;
+
+            $api = self::matchDeparture($catalog, $title);
+            if ($api === null) {
+                continue; // города нет в справочнике Tourvisor — не выводим
+            }
+            $list['other'][] = [
+                'id' => $api['id'],
+                'name' => $title,
+                'namefrom' => $api['namefrom'],
+                'default' => ($api['id'] == $default_id),
+            ];
+        }
+
         return $list;
     }
 

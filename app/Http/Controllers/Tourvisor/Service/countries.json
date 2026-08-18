@@ -1,3 +1,8 @@
+// НА ПРОЕКТЕ НЕ ИСПОЛЬЗУЕТСЯ. Статический снимок справочника Tourvisor,
+// оставлен для справки. Рабочий источник — живой ответ API
+// list.php?type=departure (см. Tourvisor::departureCatalog), сверка:
+// php artisan tourvisor:departures. Из-за этих строк файл намеренно
+// не является валидным JSON — случайный json_decode вернёт null.
 [
     {
         "id": "1",

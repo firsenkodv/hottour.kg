@@ -72,6 +72,49 @@ final class TourvisorSettings
     }
 
     /**
+     * ПОПУЛЯРНЫЕ города вылета: блок «Города вылета» вкладки «Турвизор».
+     *
+     * Запись: id (код в справочнике Tourvisor), name, namefrom («из ...»).
+     * Порядок записей = порядок в верхней группе селекта; город по
+     * умолчанию — первый. Остальные города в селект попадают автоматически
+     * из модели Contact (города сайта) — см. Tourvisor::getDeparture().
+     *
+     * Источники по убыванию приоритета:
+     *  1) список, сохранённый в админке;
+     *  2) страновой конфиг config/tourvisor/departures.php — заготовка,
+     *     на каждом сайте своя (Киргизия — Бишкек, Казахстан — Алматы
+     *     и Астана). Каталог config/tourvisor закрыт в .gitignore,
+     *     поэтому на новом окружении файл создаётся руками —
+     *     см. docs/cloning.md, п. 6а.
+     *
+     * Прежний третий фолбэк — departure.json — удалён на всех сайтах:
+     * он содержал казахстанский список и только маскировал бы забытый
+     * страновой конфиг.
+     *
+     * @return list<array<string, mixed>>
+     */
+    public static function departures(): array
+    {
+        try {
+            $list = self::values()['tv_departures'] ?? null;
+        } catch (Throwable) {
+            // база недоступна (миграции, config:cache) — работаем от конфига
+            $list = null;
+        }
+
+        if (\is_array($list) && $list !== []) {
+            return array_values($list);
+        }
+
+        $config = config('tourvisor.departures');
+        if (\is_array($config) && $config !== []) {
+            return array_values($config);
+        }
+
+        return [];
+    }
+
+    /**
      * Накладывает настройки из админки на config('tourvisor.*').
      *
      * Пустые значения пропускаются — иначе незаполненное поле затирало бы
