@@ -32,7 +32,7 @@
 
   @if($item->script)
         <div class="item-script">
-            {!!  $item->script !!}
+            <x-tourvisor.script :model="$item"/>
         </div>
     @endif
 

@@ -38,7 +38,8 @@ class Info extends Model
         'custom_css',
         'sorting',
         'script_published',
-        'script'
+        'script',
+        'tourvisor_module_id'
 
     ];
 

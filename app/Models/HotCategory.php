@@ -44,6 +44,7 @@ class HotCategory extends Model
         'sorting',
         'script_published',
         'script',
+        'tourvisor_module_id',
     ];
     protected $casts = [
         'params' => 'collection',

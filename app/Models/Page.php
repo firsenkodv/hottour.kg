@@ -36,6 +36,7 @@ class Page extends Model
         'custom_css',
         'sorting',
         'script',
+        'tourvisor_module_id',
         'script_published',
         'script_page'
     ];

@@ -302,7 +302,13 @@ class TourFormPage extends FormPage
                                 Collapse::make(__('Скрипты'), [
                                     Switcher::make(__('Скрипт'), 'script_published')->updateOnPreview(),
 
-                                    Textarea::make(__('Cкрипт'), 'script'),
+                                    Text::make(__('Номер модуля Tourvisor'), 'tourvisor_module_id')
+                                        ->hint('Только номер из tv-moduleid-..., например 998028. Разметку добавит шаблон')
+                                        ->showWhen('script_published', 1),
+
+                                    Textarea::make(__('Cкрипт'), 'script')
+                                        ->unescape()
+                                        ->showWhen('script_published', 1),
                                 ]),
                             ])->columnSpan(6),
                         ]),

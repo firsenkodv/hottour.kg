@@ -43,7 +43,8 @@ class Dump extends Model
         'temp',
         'calc',
         'script_published',
-        'script'
+        'script',
+        'tourvisor_module_id'
 
     ];
     protected $casts = [

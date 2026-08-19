@@ -29,7 +29,7 @@
 
             <br />
             <div class="item_script">
-                {!!  $item->script !!}
+                <x-tourvisor.script :model="$item"/>
             </div>
             <br />
         @endif

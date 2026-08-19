@@ -25,7 +25,7 @@
 
                 <br />
                 <div class="item_script">
-                    {!!  $category->script !!}
+                    <x-tourvisor.script :model="$category"/>
                 </div>
                 <br />
        @endif

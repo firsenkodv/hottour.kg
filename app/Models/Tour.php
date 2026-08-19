@@ -43,6 +43,7 @@ class Tour extends Model
         'country',
         'script_published',
         'script',
+        'tourvisor_module_id',
         'params_published'
     ];
 

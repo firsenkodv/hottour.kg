@@ -53,7 +53,7 @@
 
             <br />
             <div class="item_script">
-                {!!  $country->script !!}
+                <x-tourvisor.script :model="$country"/>
             </div>
             <br />
         @endif

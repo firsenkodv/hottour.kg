@@ -26,6 +26,7 @@ class Travelitem extends Model
         'smalltext',
         'script_published',
         'script',
+        'tourvisor_module_id',
         'text',
         'text2',
         'pageimg1',

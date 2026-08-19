@@ -56,7 +56,7 @@
 
             <br />
             <div class="item_script">
-                {!!  $hot_category->script !!}
+                <x-tourvisor.script :model="$hot_category"/>
             </div>
             <br />
         @endif

@@ -25,6 +25,14 @@ class CompanyResource extends ModelResource
 {
     protected string $model = Company::class;
 
+    /**
+     * Скрытые через showWhen поля всё равно отправляются на сервер.
+     *
+     * Иначе выключенный тумблер «Скрипт» затирал бы при сохранении и номер
+     * модуля, и сам скрипт: MoonShine убирает у скрытого поля атрибут name.
+     */
+    protected bool $submitShowWhen = true;
+
     protected string $title = 'Отзывы, О нас';
 
     protected string $sortColumn = 'created_at';

@@ -44,7 +44,8 @@ class Dump2 extends Model
         'temp',
         'calc',
         'script_published',
-        'script'
+        'script',
+        'tourvisor_module_id'
 
     ];
 

@@ -106,7 +106,13 @@ class PageFormPage extends FormPage
 
                         Grid::make([
                             Column::make([
-                                Textarea::make(__('Скрипт js'), 'script'),
+                                Text::make(__('Номер модуля Tourvisor'), 'tourvisor_module_id')
+                                    ->hint('Только номер из tv-moduleid-..., например 998028. Разметку добавит шаблон')
+                                    ->showWhen('script_published', 1),
+
+                                Textarea::make(__('Скрипт js'), 'script')
+                                    ->unescape()
+                                    ->showWhen('script_published', 1),
                             ])->columnSpan(12),
                         ]),
 
