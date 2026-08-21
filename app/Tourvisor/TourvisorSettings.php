@@ -53,6 +53,18 @@ final class TourvisorSettings
     private const LEGACY_ENCRYPTED = ['tv_password'];
 
     /**
+     * Поля, где пустое значение — это осознанный выбор администратора,
+     * а не «взять из конфига».
+     *
+     * Для доступов пустота означает откат на .env, и это правильно.
+     * Для номеров модулей такой откат делал поле неочищаемым: стираешь
+     * номер, сохраняешь — и на его место возвращается значение из
+     * config/tourvisor.php. Здесь пусто значит пусто: виджет просто
+     * не выводится, пока номер не задан.
+     */
+    private const EXPLICIT_EMPTY = ['tv_module_search', 'tv_module_findtour'];
+
+    /**
      * Сырые значения группы. Читается на каждый запрос, поэтому кэшируется;
      * кэш сбрасывается при сохранении формы — forget().
      *
@@ -120,7 +132,9 @@ final class TourvisorSettings
      * Накладывает настройки из админки на config('tourvisor.*').
      *
      * Пустые значения пропускаются — иначе незаполненное поле затирало бы
-     * .env и дефолты из config/tourvisor.php.
+     * .env и дефолты из config/tourvisor.php. Исключение — поля из
+     * EXPLICIT_EMPTY: там пустота задаётся администратором осознанно
+     * и должна доезжать до сайта как есть.
      */
     public static function apply(): void
     {
@@ -135,6 +149,13 @@ final class TourvisorSettings
         $overrides = [];
 
         foreach (self::MAP as $field => $key) {
+            // поле сохраняли из формы — уважаем даже пустое значение
+            if (\in_array($field, self::EXPLICIT_EMPTY, true) && \array_key_exists($field, $values)) {
+                $overrides["tourvisor.$key"] = trim((string) $values[$field]);
+
+                continue;
+            }
+
             $value = self::reveal($field, $values[$field] ?? null);
 
             if ($value === null || $value === '') {

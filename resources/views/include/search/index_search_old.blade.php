@@ -7,6 +7,7 @@
     <div class="s_result_ s_result_2">
         <div class="s_result_relative s_result_relative1 active">
 
+            @if(config('tourvisor.module_search'))
             <div class="tv-search-form tv-moduleid-{{ config('tourvisor.module_search') }}"></div>
             @external('tourvisor_js')
                 {{-- скрипт синхронный: при недоступном tourvisor.ru (VPN) вешает страницу --}}
@@ -14,15 +15,18 @@
             @else
                 <x-external.disabled service="Модуль поиска Tourvisor"/>
             @endexternal
+            @endif
 
         </div><!--.s_result_relative-->
         <div class="s_result_relative s_result_relative2">
+            @if(config('tourvisor.module_search'))
             <div class="tv-search-form tv-moduleid-{{ config('tourvisor.module_search') }}"></div>
             @external('tourvisor_js')
                 <script type="text/javascript" src="//tourvisor.ru/module/init.js"></script>
             @else
                 <x-external.disabled service="Модуль поиска Tourvisor"/>
             @endexternal
+            @endif
         </div><!--.s_result_relative2-->
         <div class="s_result_relative s_result_relative3">
             {{--<script charset="utf-8" src="//www.travelpayouts.com/widgets/442012e76e971fa08683264f4368382f.js?v=2186" async></script>--}}

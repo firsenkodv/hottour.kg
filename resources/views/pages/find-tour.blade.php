@@ -5,6 +5,7 @@
         @include('include.search.select.select_search_type')
 
         <div class="block">
+        @if(config('tourvisor.module_findtour'))
         <div class="pad_t40  tv-search-form tv-moduleid-{{ config('tourvisor.module_findtour') }}"></div>
         @external('tourvisor_js')
             {{-- скрипт синхронный: при недоступном tourvisor.ru (VPN) вешает страницу --}}
@@ -12,6 +13,7 @@
         @else
             <x-external.disabled service="Модуль поиска Tourvisor"/>
         @endexternal
+        @endif
         </div>
 
         <section class="z-index-23 pad_t16 pad_b16 ">
